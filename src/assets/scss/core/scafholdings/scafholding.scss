@@ -448,7 +448,7 @@ Notify
         height: 25px;
         width: 25px;
         z-index: 10;
-        border: 5px solid $danger;
+        border: 5px solid $primary;
         border-radius: 70px;
         -moz-animation: heartbit 1s ease-out;
         -moz-animation-iteration-count: infinite;
@@ -464,7 +464,7 @@ Notify
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;
         border-radius: 30px;
-        background-color: $danger;
+        background-color: $primary;
         position: absolute;
         right: 6px;
         top: -10px;

@@ -12,6 +12,7 @@ import { ExtractComponent } from './extract/extract.component';
 import { DirectsComponent } from './directs/directs.component';
 import { CarreirplanComponent } from './carreirplan/carreirplan.component';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { ClientComponent } from './pages/client/client.component';
 
 export const Approutes: Routes = [
 
@@ -40,6 +41,10 @@ export const Approutes: Routes = [
       {
         path: 'clients',
         component: ClientsComponent
+      },
+      {
+        path: 'client',
+        component: ClientComponent
       },
       {
         path: 'transactions',

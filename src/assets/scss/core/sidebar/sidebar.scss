@@ -55,7 +55,7 @@ sidebar navigation
       color: $gray-500;
       padding: 0 5px;
       &:hover {
-        color: $danger;
+        color: $primary;
       }
       &:after {
         display: none;
@@ -87,7 +87,7 @@ sidebar navigation
                 color: $sidebar-text;
                 padding:$sidebar-link-padding;
                 display: flex;
-                white-space: nowrap; 
+                white-space: nowrap;
                 align-items: center;
                 line-height: 25px;
                 font-size: 15px;
@@ -103,9 +103,9 @@ sidebar navigation
                 }
                 &.active,
                 &:hover {
-                    color: $danger;
+                    color: $primary;
 					i {
-						color: $danger;
+						color: $primary;
 					}
                 }
 				&.active {
@@ -113,9 +113,9 @@ sidebar navigation
 				}
             }
            &.active > .sidebar-link{
-               color: $danger;
+               color: $primary;
            }
-           
+
         }
         /*******************
          Small cap
@@ -219,7 +219,7 @@ User Profile
 ******************/
 .user-profile{
     padding: 15px;
-    
+
     .user-content, .user-name, .user-email{
         color:$theme-light;
         overflow: hidden;

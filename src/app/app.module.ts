@@ -45,6 +45,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CarreirplanComponent } from './carreirplan/carreirplan.component';
 import { ChartsModule } from 'ng2-charts';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { ClientComponent } from './pages/client/client.component';
+
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { GallerizeModule } from '@ngx-gallery/gallerize';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -73,7 +78,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ExtractComponent,
     DirectsComponent,
     CarreirplanComponent,
-    ClientsComponent
+    ClientsComponent,
+    ClientComponent
   ],
   imports: [
     CommonModule,
@@ -88,6 +94,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgxSpinnerModule,
     PerfectScrollbarModule,
     ChartsModule,
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function tokenGetter() {

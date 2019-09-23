@@ -1,129 +1,492 @@
 <div class="row">
 
-    <div class="col-sm-12">
+  <div class="col-sm-12">
 
-        <div class="card">
+    <div class="card">
 
-            <div class="card-header center">
+      <div class="card-header center">
 
-                <h3>Clientes</h3>
+        <h3>Clientes</h3>
 
-            </div>
+      </div>
 
-            <div class="card-body">
+      <div class="card-body">
 
-                <div class="row m-b-20">
+        <div class="row">
 
-                    <div class="col-sm-9 col-xs-12 input-group">
+          <div class="justify-content-center input-group m-b-40">
 
-                        <select class="form-control radius-0 col-sm-3">
+            <select class="form-control radius-0 col-sm-1">
 
-                            <option>Todos</option>
+              <option>Todos</option>
 
-                            <option>Ativos</option>
+              <option>Ativos</option>
 
-                            <option>Inativos</option>
+              <option>Inativos</option>
 
-                            <option>Expirados</option>
+              <option>Expirados</option>
 
-                            <option>Bloqueados</option>
+              <option>Bloqueados</option>
 
-                        </select>
+            </select>
 
-                        <input type="text" class="form-control radius-0 col-sm-4" placeholder="Buscar por usuário">
+            <input type="text" class="form-control radius-0 col-sm-2" placeholder="Buscar por usuário">
 
-                        <span class="input-group-btn">
-    
-                            <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                            
-                        </span>
+            <span class="input-group-btn">
 
-                    </div>
+              <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
 
-                </div>
+            </span>
 
-                <div class="table-responsive">
-
-                    <table class="table table-hover">
-
-                        <thead>
-
-                            <tr>
-
-                                <th>Data Do Cadastro</th>
-
-                                <th>Nome</th>
-
-                                <th>Usuário</th>
-
-                                <th>Gestor</th>
-
-                                <th>Plano</th>
-
-                                <th>Status</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                            <tr class="pointer">
-
-                                <td>
-
-                                    11 set 2019 às 18:06:50
-
-                                </td>
-
-                                <td>
-
-                                    Jonatan Martins Pacheco
-
-                                </td>
-
-                                <td>
-
-                                    Sharkjmp
-
-                                </td>
-
-                                <td>
-
-                                    lukaspgtu
-
-                                </td>
-
-                                <td>
-
-                                    Cota Premium
-
-                                </td>
-
-                                <td>
-
-                                    <span class="label label-success">Ativo</span>
-
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
+          </div>
 
         </div>
 
+        <div class="table-responsive">
+
+          <table class="table table-hover">
+
+            <thead>
+
+              <tr>
+
+                <th>Data Do Cadastro</th>
+
+                <th>Nome</th>
+
+                <th>Usuário</th>
+
+                <th>Gestor</th>
+
+                <th>Plano</th>
+
+                <th class="text-center">Status</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-success">Ativo</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-default">Inativo</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-warning">Expirado</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-danger">Bloqueado</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-success">Ativo</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-default">Inativo</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-warning">Expirado</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-danger">Bloqueado</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-success">Ativo</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  Jonatan Martins Pacheco
+
+                </td>
+
+                <td>
+
+                  Sharkjmp
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  Cota Premium
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-default">Inativo</span>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+          <h6>Exibindo 10 de 10 clientes encontrados.</h6>
+
+        </div>
+
+      </div>
+
     </div>
+
+  </div>
 
 </div>
 
-<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse" [fullScreen]="true">
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+  [fullScreen]="true">
 
-    <p style="color:grey ;"> Diamond Trading </p>
+  <p style="color:grey ;"> Diamond Trading </p>
 
 </ngx-spinner>
