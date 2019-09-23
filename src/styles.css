@@ -1,0 +1,238 @@
+/* You can add global styles to this file, and also import other style files */
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 0.25rem;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #6c757d;
+    content: "/";
+}
+
+.breadcrumb-item+.breadcrumb-item:hover::before {
+    text-decoration: underline;
+}
+
+.breadcrumb-item+.breadcrumb-item:hover::before {
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+.page-titles {
+    background: #fff;
+    padding: 14px 10px;
+    margin: 0 -30px 25px -30px;
+}
+
+.page-titles h4 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.page-titles .breadcrumb {
+    padding: 0px;
+    margin: 0px;
+    background: transparent;
+    font-size: 12px;
+}
+
+.page-titles .breadcrumb li a {
+    color: #212529;
+}
+
+.page-titles .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    content: "\e649";
+    font-family: themify;
+    color: #ced4da;
+    font-size: 11px;
+}
+
+.page-titles .breadcrumb .breadcrumb-item.active {
+    color: #EDA54B;
+    font-weight: 500;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.container-fluid {
+    margin-bottom: 80px;
+}
+
+.progress {
+    height: 16px;
+    background: #eef5f9;
+}
+
+.progress-bar {
+    background: #eda54b;
+}
+
+.alert.alert-style-1 {
+    padding-left: 70px;
+    background: #fff;
+    position: relative;
+    color: #324148;
+    border: 1px solid #eee;
+}
+
+.alert {
+    border-radius: 0;
+}
+
+.alert-dismissable,
+.alert-dismissible {
+    padding-right: 35px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.alert.alert-style-1.alert-info i {
+    color: #eda54b;
+    background: #f7f7f7;
+}
+
+.alert.alert-style-1 i {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 50px;
+    color: #fff;
+}
+
+.alert i {
+    font-size: 24px;
+}
+
+#mylink {
+    cursor: auto;
+    border: none;
+}
+
+.block {
+    display: block;
+}
+
+.diamond {
+    background: #eda54b;
+    color: white;
+}
+
+.center {
+    margin: 0 auto !important;
+    float: none !important;
+    text-align: center;
+    align-items: center;
+}
+
+.danger {
+    color: #e46a76;
+}
+
+.label-danger {
+    background: #e46a76 !important;
+}
+
+#google_translate_element {
+    display: none;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    position: static !important;
+    top: 0 !important;
+}
+
+.bandeira {
+    padding: 0 5px 0 5px;
+}
+
+.goog-tooltip {
+    display: none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.card-header {
+    background: white !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+.btn-outline-warning {
+    color: #EDA54B;
+    background-color: transparent;
+    background-image: none;
+    border-color: #EDA54B;
+}
+
+.btn-outline-warning:hover {
+    color: #fff;
+    background-color: #EDA54B;
+    border-color: #EDA54B;
+}
+
+.hr {
+    border-top: 1px solid #dee2e6;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.hover:hover {
+    background: rgba(0, 0, 0, .075);
+}
+
+.half {
+    width: 50%;
+    padding: 10px;
+}
+
+.pointer {
+    cursor: pointer;
+}

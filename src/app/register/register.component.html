@@ -1,0 +1,124 @@
+<section id="wrapper">
+
+    <div class="login-register" style="background-image:url(../assets/images/background/fundo-register.jpg);">
+
+        <div class="login-box card">
+
+            <div class="card-body">
+
+                <div class="center">
+
+                    <img class="img-logo center" src="../../assets/images/logo/logo-2.png"><br><br>
+
+                </div>
+
+                <form class="floating-labels m-t-40" [formGroup]="continueForm">
+
+                    <div class="form-group m-b-40" *ngIf="user">
+
+                        <small>Nome Gestor</small>
+
+                        <input formControlName="gestor" type="text" class="form-control text-center"
+                            [ngModel]="user.username" disabled>
+
+                        <span class="bar"></span>
+
+                    </div>
+
+                    <div class="form-group m-b-40">
+
+                        <input formControlName="name" type="text" class="form-control">
+
+                        <span class="bar"></span>
+
+                        <label for="input1">Nome Completo</label>
+
+                    </div>
+
+                    <div class="form-group m-b-40">
+
+                        <input formControlName="email" type="text" class="form-control">
+
+                        <span class="bar"></span>
+
+                        <label for="input1">E-mail</label>
+
+                    </div>
+
+                    <div class="form-group m-b-40">
+
+                        <input formControlName="username" type="text" class="form-control" [ngModel]="username"
+                            (change)="validateUser()">
+
+                        <span class="bar"></span>
+
+                        <label for="input1">Username</label>
+
+                        <small *ngIf="isUsernameValid==false" class="danger">*Username indisponivel</small>
+
+                    </div>
+
+                    <div class="form-group m-b-40">
+
+                        <input formControlName="phone" type="text" class="form-control" mask='(00) 00000-0000'>
+
+                        <span class="bar"></span>
+
+                        <label for="input1">Telefone</label>
+
+                    </div>
+
+                    <div class="form-group m-b-40">
+
+                        <input formControlName="date" type="text" class="form-control" mask='00/00/0000'>
+
+                        <span class="bar"></span>
+
+                        <label for="input1">Data de Nascimento</label>
+
+                    </div>
+
+                    <div class="form-group m-b-40">
+
+                        <input formControlName="password" type="password" class="form-control">
+
+                        <span class="bar"></span>
+
+                        <label for="input1">Senha</label>
+
+                    </div>
+
+                    <div class="form-group text-center p-b-20">
+
+                        <div class="col-xs-12">
+
+                            <button type="submit" class="btn waves-effect waves-light btn-rounded diamond"
+                                (click)="continueRegister()">Continuar</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group m-b-0">
+
+                        <div class="col-sm-12 text-center">
+
+                            Ja possui conta ? <a routerLink="/login" class="text-info m-l-5"><b>Login</b></a>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+    <p style="color:grey ;"> Diamond Trading </p>
+</ngx-spinner>

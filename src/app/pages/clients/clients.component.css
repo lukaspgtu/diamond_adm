@@ -1,0 +1,13 @@
+.input-group-btn button,
+.radius-0 {
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+.radius-0 {
+    border-right: none;
+}
+
+.input-group-btn button:focus {
+    outline: none !important;
+}

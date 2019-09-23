@@ -1,0 +1,256 @@
+<section id="wrapper">
+
+    <div class="login-register" style="background-image:url(../assets/images/background/fundo-register.jpg);">
+
+        <div class="login-box card" *ngIf="teste==null">
+
+            <h1>Ta no lugar errado irmao</h1>
+
+        </div>
+
+        <div class="login-box card" *ngIf="teste!=null">
+
+            <div class="card-body">
+
+                <div class="center">
+
+                    <img class="img-logo center" src="../../assets/images/logo/logo-2.png"><br><br>
+
+                    <h3 style="color:#808080;">Escolha seu Plano.</h3>
+
+                </div>
+
+                <form class="floating-labels m-t-40">
+
+                    <div class="bg-white table-responsive" style="overflow: auto; height: 500px">
+
+                        <table class="table" style="border:hidden;">
+
+                            <tbody style="border:hidden;">
+
+                                <tr *ngFor="let item of plans">
+
+                                    <td>
+
+                                        <img src="{{item.photo}}" class="type-account">
+
+                                    </td>
+
+                                    <td>
+
+                                        <span>
+
+                                            <h4 class="align-h">{{item.name}}</h4>
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <span>
+
+                                            <h5 class="align-h">{{item.price | currency}}</h5>
+                                        </span>
+
+                                    </td>
+
+                                    <td class="text-center">
+
+                                        <div *ngIf="item.token!=choice_plan">
+
+                                            <button type="button"
+                                                class="align-h btn waves-effect waves-light btn-block btn-warning m-b-10"
+                                                style="background:black !important; border-color:black !important;"
+                                                (click)="choicePlan(item.id)">Selecionar</button>
+
+                                        </div>
+
+                                        <div *ngIf="item.token==choice_plan">
+
+                                            <button type="button"
+                                                class="align-h btn waves-effect waves-light btn-block btn-warning m-b-10"
+                                                (click)="choicePlan(item.id)">Selecionado</button>
+
+                                        </div>
+
+                                        <small class="align-h" style="color:#808080;"><a style="color:#808080;" href=""
+                                                alt="default" data-toggle="modal" data-target=".bs-example-modal-lg"
+                                                (click)="viewPlan(item.id)">Detalhes</a></small>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div><br>
+
+                    <div class="form-group text-center p-b-20 center">
+
+                        <div class="col-xs-6 col-md-5 center">
+
+                            <button type="button" class="btn btn-rounded btn-block btn-warning"
+                                (click)="register()">Finalizar</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group m-b-0">
+
+                        <div class="col-sm-12 text-center">
+
+                            Ja possui conta ? <a routerLink="/login" class="text-info m-l-5"><b>Login</b></a>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL PLANS  -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" style="display: none;" *ngIf="plan_selected">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myLargeModalLabel">Planos</h4>
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row match-height">
+
+                    <div class="col-12 center">
+
+                        <div class="card">
+
+                            <div class="card-header center" style="background:white;">
+
+                                <img class="img-plan" src="{{plan_selected.photo}}"><br><br>
+
+                                <h2>{{plan_selected.name}}</h2>
+
+                            </div>
+
+                            <table class="table table-hover">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th></th>
+
+                                        <th></th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p>Pontos</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold"> {{plan_selected.points}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p> Binário</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold"> {{plan_selected.percent}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p>Teto Diário</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold">{{plan_selected.payment_limit | currency}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p>Teto Geral</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold">{{plan_selected.gain_limit | currency}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- /.modal -->
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+    <p style="color:grey ;"> Diamond Trading </p>
+</ngx-spinner>

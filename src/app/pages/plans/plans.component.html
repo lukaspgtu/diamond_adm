@@ -1,0 +1,236 @@
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="card" *ngIf="planOpen==null">
+
+            <div class="card-header center">
+
+                <h3>Planos</h3><br>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Plano</th>
+
+                                <th></th>
+
+                                <th>Preço</th>
+
+                                <th>Pontos</th>
+
+                                <th>Porcentagem</th>
+
+                                <th>Teto Diário</th>
+
+                                <th>Teto Binário</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+
+                                    <img src="https://diamondtrader.co/api/img/premium.png" class="img-plan">
+
+                                </td>
+
+                                <td>
+
+                                    <h4 class="align-h">Cota Premium</h4>
+
+                                </td>
+
+                                <td>
+
+                                    <h5 class="align-h">$3,000.00</h5>
+
+                                </td>
+
+                                <td>
+
+                                    <h5 class="align-h">1000</h5>
+
+                                </td>
+
+                                <td>
+
+                                    <h5 class="align-h">20%</h5>
+
+                                </td>
+
+                                <td>
+
+                                    <h5 class="align-h">$1000</h5>
+
+                                </td>
+
+                                <td>
+
+                                    <h5 class="align-h">$80000</h5>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL PLANS  -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;" *ngIf="plan_selected">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myLargeModalLabel">Planos</h4>
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row match-height">
+
+                    <div class="col-12 center">
+
+                        <div class="card">
+
+                            <div class="card-header center" style="background:white;">
+
+                                <img class="img-plan" src="{{plan_selected.photo}}"><br><br>
+
+                                <h2>{{plan_selected.name}}</h2>
+
+                            </div>
+
+                            <table class="table table-hover">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th></th>
+
+                                        <th></th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p>Pontos</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold"> {{plan_selected.points}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p> Binário</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold"> {{plan_selected.percent}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p>Teto Diário</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold">{{plan_selected.payment_limit | currency}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <p>Teto Geral</p>
+
+                                        </td>
+
+                                        <td>
+
+                                            <p class="info bold">{{plan_selected.gain_limit | currency}}</p>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- /.modal -->
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse" [fullScreen]="true">
+    <p style="color:grey ;"> Diamond Trading </p>
+</ngx-spinner>

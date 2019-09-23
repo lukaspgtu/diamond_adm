@@ -1,0 +1,517 @@
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="card">
+
+            <div class="card-header text-center">
+
+                <h3>Faturas</h3><br>
+
+            </div>
+
+            <div>
+                <hr>
+            </div>
+
+            <div class="card-body center">
+
+                <div class="row">
+
+                    <form class="form-inline">
+
+                        <div class="col-md-5">
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <input class="form-control" placeholder="Data Inicial" name="dp"
+                                        [(ngModel)]="date_begin" ngbDatepicker [footerTemplate]="footerTemplate"
+                                        #begin="ngbDatepicker" (dateSelect)="checkBegin()" (click)="begin.toggle()"
+                                        readonly [minDate]="begin_min" [maxDate]="begin_max">
+
+                                    <div class=" input-group-append">
+
+                                        <button class="btn btn-outline-secondary fa fa-calendar input-date"
+                                            (click)="begin.toggle()" type="button" id="button_begin"></button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-7">
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <input class="form-control" placeholder="Data Final" name="dp"
+                                        [(ngModel)]="date_end" ngbDatepicker [footerTemplate]="footerTemplate"
+                                        #end="ngbDatepicker" (click)="end.toggle()" readonly (dateSelect)="checkEnd()"
+                                        [minDate]="end_min" [maxDate]="end_max">
+
+                                    <div class=" input-group-append">
+
+                                        <button class="btn btn-outline-secondary fa fa-calendar input-date"
+                                            (click)="end.toggle()" type="button" id="button_end"></button>
+
+                                    </div>
+
+                                    <div ngbDropdown class="d-inline-block">
+                                        <button class="btn btn-link" type="button" id="dropdownBasic1"
+                                            ngbDropdownToggle>Filtros</button>
+
+                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+                                            <button type="button" ngbDropdownItem
+                                                (click)="filterByType(1)">Pagamento</button>
+
+                                            <button type="button" ngbDropdownItem
+                                                (click)="filterByType(2)">Saque</button>
+
+                                            <button type="button" ngbDropdownItem (click)="filterAll()">Todas</button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div><br>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <label for="rdo-1" class="btn-radio">
+
+                            <input type="radio" id="rdo-1" name="radio-grp" (click)="filterByStatus(1)">
+
+                            <svg width="15px" height="15px" viewBox="0 0 20 20">
+
+                                <circle cx="10" cy="10" r="9"></circle>
+
+                                <path
+                                    d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                                    class="inner"></path>
+
+                                <path
+                                    d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                                    class="outer"></path>
+
+                            </svg>
+
+                            <span class="m-l-5">Confirmado</span>
+
+                        </label>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label for="rdo-2" class="btn-radio">
+
+                            <input type="radio" id="rdo-2" name="radio-grp" (click)="filterByStatus(2)">
+
+                            <svg width=" 15px" height="15px" viewBox="0 0 20 20">
+
+                                <circle cx="10" cy="10" r="9"></circle>
+
+                                <path
+                                    d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                                    class="inner"></path>
+
+                                <path
+                                    d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                                    class="outer"></path>
+
+                            </svg>
+
+                            <span class="m-l-5">Recusado</span>
+
+                        </label>
+                    </div>
+
+
+                    <div class="col-md-4">
+
+
+                        <label for="rdo-3" class="btn-radio">
+
+                            <input type="radio" id="rdo-3" name="radio-grp" (click)="filterByStatus(0)">
+
+                            <svg width="15px" height="15px" viewBox="0 0 20 20">
+
+                                <circle cx="10" cy="10" r="9"></circle>
+
+                                <path
+                                    d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                                    class="inner"></path>
+
+                                <path
+                                    d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                                    class="outer"></path>
+
+                            </svg>
+
+                            <span class="m-l-5">Aguardando</span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- <div>
+                    <hr>
+                </div> -->
+
+            <div class="text-center">
+
+                <div *ngIf="value_filter">
+
+                    <p>Filtrando por: <span class="bold">{{value_filter}}</span></p>
+
+                </div>
+
+                <div *ngIf="!transactions">
+                    <!-- <h1>vazio</h1> -->
+
+                </div>
+
+                <table class="table table-hover" *ngIf="transactions">
+
+                    <tr>
+                        <th></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
+
+                    <tbody>
+
+                        <tr data-toggle="modal" data-target=".bd-example-modal-lg" (click)="viewTransaction(item.id)"
+                            *ngFor="let item of  transactions | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index">
+
+                            <td>
+                                <span>
+                                    {{ item.created_at | date:'dd LLL, hh:mm:ss' }}
+
+                                </span>
+                            </td>
+
+                            <td>
+                                <span *ngIf="item.status==1" class="label label-success">Confirmado</span>
+
+                                <span *ngIf="item.status==2" class="label label-danger">Recusado</span>
+
+                                <span *ngIf="item.status==0" class="label label-info">Aguardando</span>
+
+
+                            </td>
+
+                            <td>
+                                <span *ngIf="item.type==1"> Pagamento</span>
+                                <span *ngIf="item.type==2"> Saque</span>
+                            </td>
+
+                            <td>
+                                <span *ngIf="item.type==1" class="text-success bold">
+                                    +{{ item.value | currency }}</span>
+                                <span *ngIf="item.type==2" class="danger bold">
+                                    -{{ item.value | currency }}</span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <div class="text-center" *ngIf="transactions.length>10">
+
+                    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+                        nextLabel="Próximo" (isLastPage)="true"></pagination-controls>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+    <p style="color:grey ;"> Diamond Trading </p>
+</ngx-spinner>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content" *ngIf="transaction_selected">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title bold" id="exampleModalLabel"><span
+                        *ngIf="transaction_selected.type==1">Pagamento</span>
+                    <span *ngIf="transaction_selected.type==2">Saque</span></h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                    <span aria-hidden="true">&times;</span>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body" *ngIf="transaction_selected">
+
+                <div class="card-header text-center">
+
+                    <img *ngIf="transaction_selected.type==1" src="{{transaction_selected.plan.img}}"
+                        width="100px;"><br>
+
+                    <h3 *ngIf="transaction_selected.type==1"> {{transaction_selected.plan.name}}</h3>
+                    <h3 *ngIf="transaction_selected.type==2"> Saque</h3>
+
+
+                </div><br>
+
+                <div class="row" *ngIf="transaction_selected.type==1">
+
+                    <div class="col-md-4 text-center">
+
+                        <h5>QR Code</h5><br>
+
+                        <img src="{{transaction_selected.link}}">
+
+                    </div>
+
+                    <div class="col-md-8 text-center">
+
+                        <h5>Detalhes</h5>
+
+                        <!--TABLE pagamento-->
+                        <table class="table table-hover text-center">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Valor:</span>
+                                    </td>
+
+                                    <td>
+
+                                        <span class="text-success">{{transaction_selected.value | currency}}</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Criação:</span>
+                                    </td>
+
+                                    <td>
+
+                                        {{transaction_selected.created_at | date:' dd/MM/yyyy, hh:mm:ss'}}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Confirmação:</span>
+                                    </td>
+
+                                    <td>
+
+                                        {{transaction_selected.confirmed_at | date:' dd/MM/yyyy, hh:mm:ss'}}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Status:</span>
+                                    </td>
+
+                                    <td>
+
+                                        <span *ngIf="transaction_selected.status==1"
+                                            class="label label-success">Confirmado</span>
+
+                                        <span *ngIf="transaction_selected.status==2"
+                                            class="label label-danger">Recusado</span>
+
+                                        <span *ngIf="transaction_selected.status==0"
+                                            class="label label-info">Aguardando</span>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Carteira:</span>
+                                    </td>
+
+                                    <td>
+
+                                        <span class="text-info">{{transaction_selected.wallet}}</span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row" *ngIf="transaction_selected.type==2">
+
+                    <div class="col-md-4 text-center">
+
+                        <h5>QR Code</h5><br>
+
+                        <img src="{{transaction_selected.link}}">
+
+                    </div>
+
+                    <div class="col-md-8 text-center">
+
+                        <h5>Detalhes</h5>
+
+                        <!--TABLE saque-->
+                        <table class="table table-hover text-center">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Valor:</span>
+                                    </td>
+
+                                    <td>
+
+                                        <span class="danger">-{{transaction_selected.value | currency}}</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Criação:</span>
+                                    </td>
+
+                                    <td>
+
+                                        {{transaction_selected.created_at | date:' dd/MM/yyyy, hh:mm:ss'}}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Confirmação:</span>
+                                    </td>
+
+                                    <td>
+
+                                        {{transaction_selected.confirmed_at | date:' dd/MM/yyyy, hh:mm:ss'}}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Status:</span>
+                                    </td>
+
+                                    <td>
+
+                                        <span *ngIf="transaction_selected.status==1"
+                                            class="label label-success">Confirmado</span>
+
+                                        <span *ngIf="transaction_selected.status==2"
+                                            class="label label-danger">Recusado</span>
+
+                                        <span *ngIf="transaction_selected.status==0"
+                                            class="label label-info">Aguardando</span>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        <span class="bold">Carteira:</span>
+                                    </td>
+
+                                    <td>
+
+                                        <span class="text-info">{{transaction_selected.wallet}}</span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

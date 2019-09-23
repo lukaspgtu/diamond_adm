@@ -1,0 +1,723 @@
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="card">
+
+            <div class="card-header center">
+
+                <h3>Rede Binária</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="card-header text-center">
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            <h5 style="color:grey">Pontuação a Esquerda</h5>
+
+                            <p *ngIf="people_network_l!==null">{{points_network_l}} Pontos
+                                <br>
+
+                                <small *ngIf="points_network_l!==null">{{people_network_l}} pessoas</small>
+
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <form>
+
+                                <input type="text" id="search" class="form-control rounded text-center"
+                                    placeholder="Username" (change)="searchNetWork()">  
+                             
+                            </form>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <h5 style="color:grey">Pontuação a Direita</h5>
+
+                            <p *ngIf="people_network_r!==null">{{points_network_r}} Pontos
+                                <br>
+
+                                <small *ngIf="points_network_r!==null">{{people_network_r}} pessoas</small>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <div class="management-hierarchy" *ngIf="network">
+
+                    <div class="hv-container">
+
+                        <div class="hv-wrapper">
+
+                            <div class="hv-item">
+
+                                <div class="hv-item-parent">
+
+                                    <div class="person" (click)="changeNetWork(network[0].username)"
+                                        ngbPopover="{{network[0].plan}}" triggers="mouseenter:mouseleave">
+
+                                        <img *ngIf="network[0]!=null" src="{{network[0].img}}" alt="user1"><br>
+
+                                        <img *ngIf="network[0]==null" src="../../assets/images/binary/undefined.png">
+
+                                        <small class="username">{{network[0].username}}</small>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="hv-item-children">
+
+                                    <div class="hv-item-child">
+
+                                        <div class="hv-item">
+
+                                            <div class="hv-item-parent">
+
+                                                <div class="person" (click)="changeNetWork(network[1].username)"
+                                                    *ngIf="network[1]!=null" ngbPopover="{{network[1].plan}}"
+                                                    triggers="mouseenter:mouseleave">
+
+                                                    <img *ngIf="network[1]!=null" src="{{network[1].img}}" alt="user2">
+
+                                                    <img *ngIf="network[1]==null"
+                                                        src="../../assets/images/binary/undefined.png">
+                                                    <br>
+
+                                                    <small *ngIf="network[1]!=null">{{network[1].username}}</small>
+
+                                                </div>
+
+                                                <div class="person" *ngIf="network[1]==null" ngbPopover="Nenhum usuário"
+                                                    triggers="mouseenter:mouseleave">
+
+                                                    <img *ngIf="network[1]!=null" src="{{network[1].img}}" alt="user3">
+
+                                                    <img *ngIf="network[1]==null"
+                                                        src="../../assets/images/binary/undefined.png">
+
+                                                    <br>
+
+                                                    <small *ngIf="network[1]!=null">{{network[1].username}}</small>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="hv-item-children">
+
+                                                <div class="hv-item-child">
+
+                                                    <div class="hv-item">
+
+                                                        <div class="hv-item-parent">
+
+                                                            <div class="person"
+                                                                (click)="changeNetWork(network[2].username)"
+                                                                *ngIf="network[2]!=null"
+                                                                ngbPopover="{{network[2].plan}}"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[2]!=null" src="{{network[2].img}}"
+                                                                    alt="user3">
+
+                                                                <img *ngIf="network[2]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[2]!=null">{{network[2].username}}</small>
+
+                                                            </div>
+
+                                                            <div class="person" *ngIf="network[2]==null"
+                                                                ngbPopover="Nenhum usuário"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[2]!=null" src="{{network[2].img}}"
+                                                                    alt="user3">
+
+                                                                <img *ngIf="network[2]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[2]!=null">{{network[2].username}}</small>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="hv-item-children">
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[3].username)"
+                                                                    *ngIf="network[3]!=null"
+                                                                    ngbPopover="{{network[3].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[3]!=null"
+                                                                        src="{{network[3].img}}" alt="user4">
+
+                                                                    <img *ngIf="network[3]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[3]!=null">{{network[3].username}}</small>
+
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[3]==null"
+                                                                    ngbPopover="Nenhum usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[3]!=null"
+                                                                        src="{{network[3].img}}" alt="user3">
+
+                                                                    <img *ngIf="network[3]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[3]!=null">{{network[3].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[4].username)"
+                                                                    *ngIf="network[4]!=null"
+                                                                    ngbPopover="{{network[4].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[4]!=null"
+                                                                        src="{{network[4].img}}" alt="user5">
+
+                                                                    <img *ngIf="network[4]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[4]!=null">{{network[4].username}}</small>
+
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[4]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[4]!=null"
+                                                                        src="{{network[4].img}}" alt="user4">
+
+                                                                    <img *ngIf="network[4]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[4]!=null">{{network[4].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="hv-item-child">
+
+                                                    <div class="hv-item">
+
+                                                        <div class="hv-item-parent">
+
+                                                            <div class="person"
+                                                                (click)="changeNetWork(network[5].username)"
+                                                                *ngIf="network[5]!=null"
+                                                                ngbPopover="{{network[5].plan}}"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[5]!=null" src="{{network[5].img}}"
+                                                                    alt="user6">
+
+                                                                <img *ngIf="network[5]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[5]!=null">{{network[5].username}}</small>
+
+                                                            </div>
+
+                                                            <div class="person" *ngIf="network[5]==null"
+                                                                ngbPopover="Nenhum Usuário"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[5]!=null" src="{{network[5].img}}"
+                                                                    alt="user5">
+
+                                                                <img *ngIf="network[5]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[5]!=null">{{network[5].username}}</small>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="hv-item-children">
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[6].username)"
+                                                                    *ngIf="network[6]!=null"
+                                                                    ngbPopover="{{network[6].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[6]!=null"
+                                                                        src="{{network[6].img}}" alt="user7">
+
+                                                                    <img *ngIf="network[6]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[6]!=null">{{network[6].username}}</small>
+
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[6]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[6]!=null"
+                                                                        src="{{network[6].img}}" alt="user6">
+
+                                                                    <img *ngIf="network[6]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[6]!=null">{{network[6].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[7].username)"
+                                                                    *ngIf="network[7]!=null"
+                                                                    ngbPopover="{{network[7].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[7]!=null"
+                                                                        src="{{network[7].img}}" alt="user8">
+
+
+                                                                    <img *ngIf="network[7]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[7]!=null">{{network[7].username}}</small>
+
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[7]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[7]!=null"
+                                                                        src="{{network[7].img}}" alt="user7">
+
+                                                                    <img *ngIf="network[7]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[7]!=null">{{network[7].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="hv-item-child">
+
+                                        <div class="hv-item">
+
+                                            <div class="hv-item-parent">
+
+                                                <div class="person" (click)="changeNetWork(network[8].username)"
+                                                    *ngIf="network[8]!=null" ngbPopover="{{network[8].plan}}"
+                                                    triggers="mouseenter:mouseleave">
+
+                                                    <img *ngIf="network[8]!=null" src="{{network[8].img}}" alt="user9">
+
+
+                                                    <img *ngIf="network[8]==null"
+                                                        src="../../assets/images/binary/undefined.png">
+
+
+                                                    <br>
+
+                                                    <small *ngIf="network[8]!=null">{{network[8].username}}</small>
+
+                                                </div>
+
+                                                <div class="person" *ngIf="network[8]==null" ngbPopover="Nenhum Usuário"
+                                                    triggers="mouseenter:mouseleave">
+
+                                                    <img *ngIf="network[8]!=null" src="{{network[8].img}}" alt="user8">
+
+                                                    <img *ngIf="network[8]==null"
+                                                        src="../../assets/images/binary/undefined.png">
+
+                                                    <br>
+
+                                                    <small *ngIf="network[8]!=null">{{network[8].username}}</small>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="hv-item-children">
+
+                                                <div class="hv-item-child">
+                                                    <!-- Key component -->
+                                                    <div class="hv-item">
+
+                                                        <div class="hv-item-parent">
+
+                                                            <div class="person"
+                                                                (click)="changeNetWork(network[9].username)"
+                                                                *ngIf="network[9]!=null"
+                                                                ngbPopover="{{network[9].plan}}"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[9]!=null" src="{{network[9].img}}"
+                                                                    alt="user10">
+
+                                                                <img *ngIf="network[9]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[9]!=null">{{network[9].username}}</small>
+
+                                                            </div>
+
+                                                            <div class="person" *ngIf="network[9]==null"
+                                                                ngbPopover="Nenhum Usuário"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[9]!=null" src="{{network[9].img}}"
+                                                                    alt="user9">
+
+                                                                <img *ngIf="network[9]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[9]!=null">{{network[9].username}}</small>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="hv-item-children">
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[10].username)"
+                                                                    *ngIf="network[10]!=null"
+                                                                    ngbPopover="{{network[10].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[10]!=null"
+                                                                        src="{{network[10].img}}" alt="user11">
+
+                                                                    <img *ngIf="network[10]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[10]!=null">{{network[10].username}}</small>
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[10]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[10]!=null"
+                                                                        src="{{network[10].img}}" alt="user10">
+
+                                                                    <img *ngIf="network[10]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[10]!=null">{{network[10].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[11].username)"
+                                                                    *ngIf="network[11]!=null"
+                                                                    ngbPopover="{{network[11].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[11]!=null"
+                                                                        src="{{network[11].img}}" alt="user12">
+
+                                                                    <img *ngIf="network[11]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[11]!=null">{{network[11].username}}</small>
+
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[11]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[11]!=null"
+                                                                        src="{{network[11].img}}" alt="user11">
+
+                                                                    <img *ngIf="network[11]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[11]!=null">{{network[11].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="hv-item-child">
+
+                                                    <!-- Key component -->
+
+                                                    <div class="hv-item">
+
+                                                        <div class="hv-item-parent">
+
+                                                            <div class="person"
+                                                                (click)="changeNetWork(network[12].username)"
+                                                                *ngIf="network[12]!=null"
+                                                                ngbPopover="{{network[12].plan}}"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[12]!=null" src="{{network[12].img}}"
+                                                                    alt="user13">
+
+                                                                <img *ngIf="network[12]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[12]!=null">{{network[12].username}}</small>
+
+                                                            </div>
+
+                                                            <div class="person" *ngIf="network[12]==null"
+                                                                ngbPopover="Nenhum Usuário"
+                                                                triggers="mouseenter:mouseleave">
+
+                                                                <img *ngIf="network[12]!=null" src="{{network[12].img}}"
+                                                                    alt="user12">
+
+                                                                <img *ngIf="network[12]==null"
+                                                                    src="../../assets/images/binary/undefined.png">
+
+                                                                <br>
+
+                                                                <small
+                                                                    *ngIf="network[12]!=null">{{network[12].username}}</small>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="hv-item-children">
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[13].username)"
+                                                                    *ngIf="network[13]!=null"
+                                                                    ngbPopover="{{network[13].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[13]!=null"
+                                                                        src="{{network[13].img}}" alt="user14">
+
+                                                                    <img *ngIf="network[13]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[13]!=null">{{network[13].username}}</small>
+
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[13]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[13]!=null"
+                                                                        src="{{network[13].img}}" alt="user13">
+
+                                                                    <img *ngIf="network[13]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[13]!=null">{{network[13].username}}</small>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="hv-item-child">
+
+                                                                <div class="person"
+                                                                    (click)="changeNetWork(network[14].username)"
+                                                                    *ngIf="network[14]!=null"
+                                                                    ngbPopover="{{network[14].plan}}"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[14]!=null"
+                                                                        src="{{network[14].img}}" alt="user15">
+
+                                                                    <img *ngIf="network[14]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[14]!=null">{{network[14].username}}</small>
+                                                                </div>
+
+                                                                <div class="person" *ngIf="network[14]==null"
+                                                                    ngbPopover="Nenhum Usuário"
+                                                                    triggers="mouseenter:mouseleave">
+
+                                                                    <img *ngIf="network[14]!=null"
+                                                                        src="{{network[14].img}}" alt="user14">
+
+                                                                    <img *ngIf="network[14]==null"
+                                                                        src="../../assets/images/binary/undefined.png">
+
+                                                                    <br>
+
+                                                                    <small
+                                                                        *ngIf="network[14]!=null">{{network[14].username}}</small>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+    <p style="color:grey ;"> Diamond Trading </p>
+</ngx-spinner>

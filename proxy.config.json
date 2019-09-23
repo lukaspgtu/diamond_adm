@@ -1,0 +1,7 @@
+{
+    "/": {
+        "target": "https://api.prosystemsc.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

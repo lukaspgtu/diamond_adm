@@ -1,0 +1,67 @@
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="card">
+
+            <div class="card-header text-center">
+
+                <h3>Plano de Carreira</h3><br>
+
+                <a class="btn btn-outline-warning btn-rounded"
+                    href="https://office.diamondtrader.co/assets/pdf/plano_carreira.pdf" target="_blank"><i
+                        class="mdi mdi-file-pdf"></i>
+                    Apresentação</a>
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-hover center">
+
+                    <thead>
+
+                        <th>Plano de Carreira</th>
+                        <th>Pontos</th>
+                        <th>Prêmio</th>
+                        <th></th>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr *ngFor="let item of carreirPlan">
+
+                            <td>{{item.name}}</td>
+
+                            <td>{{item.points}}</td>
+
+                            <td><span>{{item.premium}}</span></td>
+
+                            <td width=300px>
+
+                                <p>
+                                    <ngb-progressbar [showValue]="true" type="info" [value]="item.percent">
+                                    </ngb-progressbar>
+                                </p>
+
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+    <p style="color:grey ;"> Diamond Trading </p>
+</ngx-spinner>
