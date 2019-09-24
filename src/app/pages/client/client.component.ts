@@ -10,11 +10,18 @@ import { map } from 'rxjs/operators';
 })
 export class ClientComponent implements OnInit {
 
+  public isDocument: boolean = false;
+
   items: GalleryItem[];
 
   imageData = data;
 
   constructor(public gallery: Gallery, public lightbox: Lightbox) {
+
+    if (window.location.pathname == '/client/documents') {
+      this.isDocument = true;
+    }
+
   }
 
   ngOnInit() {

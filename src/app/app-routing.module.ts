@@ -7,12 +7,11 @@ import { AuthGuard } from './_guards/auth.guard'
 import { RegisterComponent } from './register/register.component';
 import { PlansComponent } from './pages/plans/plans.component';
 import { NetworkComponent } from './pages/network/network.component';
-import { InvoicesComponent } from './invoices/invoices.component';
-import { ExtractComponent } from './extract/extract.component';
-import { DirectsComponent } from './directs/directs.component';
-import { CarreirplanComponent } from './carreirplan/carreirplan.component';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { ClientComponent } from './pages/client/client.component';
+import { InvoicesComponent } from './pages/invoices/invoices.component';
+import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { WithdrawsComponent } from './pages/withdraws/withdraws.component';
 
 export const Approutes: Routes = [
 
@@ -47,21 +46,21 @@ export const Approutes: Routes = [
         component: ClientComponent
       },
       {
-        path: 'transactions',
+        path: 'client/documents',
+        component: ClientComponent
+      },
+      {
+        path: 'invoices',
         component: InvoicesComponent
       },
       {
-        path: 'extract',
-        component: ExtractComponent
+        path: 'invoice',
+        component: InvoiceComponent
       },
       {
-        path: 'directs',
-        component: DirectsComponent
-      },
-      {
-        path: 'carreirplan',
-        component: CarreirplanComponent
-      },
+        path: 'withdraws',
+        component: WithdrawsComponent
+      }
     ]
   }
 ];

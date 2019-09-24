@@ -216,6 +216,10 @@ body {
     border-color: #EDA54B;
 }
 
+.btn-success {
+  color: #fff !important;
+}
+
 .hr {
     border-top: 1px solid #dee2e6;
 }
@@ -260,4 +264,14 @@ body {
   border: 0;
   padding: 15px 20px;
   color: #212529;
+}
+
+.input-group-btn button,
+.radius-0 {
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+.radius-0 {
+    border-right: none;
 }

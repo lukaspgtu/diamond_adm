@@ -1,0 +1,169 @@
+<div class="row">
+
+  <div class="col-sm-12">
+
+    <div class="card">
+
+      <div class="card-header center">
+
+        <h3>Saques</h3>
+
+      </div>
+
+      <div class="card-body">
+
+        <!-- search -->
+
+        <div class="row">
+
+          <div class="justify-content-center input-group m-b-40">
+
+            <select class="form-control radius-0 col-sm-2">
+
+              <option>Todos</option>
+
+              <option>Saldo Bônus</option>
+
+              <option>Saldo Rendimento</option>
+
+            </select>
+
+            <input class="form-control radius-0 col-sm-1" placeholder="Data" name="dp" [(ngModel)]="date_begin"
+              ngbDatepicker [footerTemplate]="footerTemplate" #begin="ngbDatepicker" (dateSelect)="checkBegin()"
+              (click)="begin.toggle()" readonly [minDate]="begin_min" [maxDate]="begin_max">
+
+            <div class="input-group-append">
+
+              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"
+                id="button_begin"></button>
+
+            </div>
+
+            <input type="text" class="form-control radius-0 col-sm-2 user" placeholder="Usuário">
+
+            <span class="input-group-btn">
+
+              <button class="btn btn-primary search"><i class="fa fa-search"></i></button>
+
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- search -->
+
+        <div class="table-responsive">
+
+          <table class="table table-hover">
+
+            <thead>
+
+              <tr>
+
+                <th>Solicitação</th>
+
+                <th>Usuário</th>
+
+                <th>Valor</th>
+
+                <th>Taxa</th>
+
+                <th class="text-center" width="1">Status</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  $3000.00
+
+                </td>
+
+                <td>
+
+                  $300.00
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-success block">Confirmada</span>
+
+                </td>
+
+              </tr>
+
+              <tr class="pointer">
+
+                <td>
+
+                  11 set 2019 às 18:06:50
+
+                </td>
+
+                <td>
+
+                  lukaspgtu
+
+                </td>
+
+                <td>
+
+                  $3000.00
+
+                </td>
+
+                <td>
+
+                  $300.00
+
+                </td>
+
+                <td class="text-center">
+
+                  <span class="label label-default block">Pendente</span>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+          <h6>Exibindo 10 de 10 saques encontrados</h6>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
+  [fullScreen]="true">
+
+  <p style="color:grey ;"> Diamond Trading </p>
+
+</ngx-spinner>

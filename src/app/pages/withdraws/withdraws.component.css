@@ -1,0 +1,37 @@
+.form-control:read-only {
+  background: white !important;
+}
+
+.calendar {
+  border: 1px solid #ced4da !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+.form-control:focus {
+  border-color: #ced4da !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+select:focus {
+  border-right: 1px solid #ced4da !important;
+}
+
+@media (max-width: 600px) {
+  .input-group .form-control {
+    width: 60%;
+  }
+  .form-control,
+  .input-group-append,
+  .input-group-btn {
+    margin-top: 10px;
+  }
+  .input-group-btn, .search {
+    display: block;
+    width: 100%;
+  }
+  .calendar, .user, select {
+    border-right: 1px solid #ced4da !important;
+  }
+}
