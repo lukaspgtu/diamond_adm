@@ -1,318 +1,288 @@
 <div class="row">
 
-  <div class="col-lg-4 col-xlg-3 col-md-5">
+    <div class="col-lg-4 col-xlg-3 col-md-5">
 
-    <div class="card">
+        <div class="card">
 
-      <div class="card-body">
+            <div class="card-body">
 
-        <div class="center m-t-30">
+                <div class="center m-t-30">
 
-          <img src="../../../assets/images/users/1.jpg" class="img-circle" width="150" />
+                    <img src="../../../assets/images/users/1.jpg" class="img-circle" width="150" />
 
-          <h4 class="card-title m-t-10">Lucas Moraes Campos</h4>
+                    <h4 class="card-title m-t-10">Lucas Moraes Campos</h4>
 
-          <h6 class="card-subtitle">lukaspgtu</h6>
+                    <h6 class="card-subtitle">lukaspgtu</h6>
 
-          <div class="row text-center justify-content-md-center m-t-20">
+                    <div class="row text-center justify-content-md-center m-t-20">
 
-            <div class="col-4">
+                        <div class="col-4">
 
-              <h4 class="text-primary">$42.9</h4>
+                            <h4 class="text-primary">$42.9</h4>
 
-              <small>Saldo de rendimento</small>
+                            <small>Saldo de rendimento</small>
 
-            </div>
+                        </div>
 
-            <div class="col-4">
+                        <div class="col-4">
 
-              <h4 class="text-primary">$73.5</h4>
+                            <h4 class="text-primary">$73.5</h4>
 
-              <small>Saldo de bônus</small>
+                            <small>Saldo de bônus</small>
 
-            </div>
-
-          </div>
-
-          <div class="row text-center justify-content-md-center m-t-20">
-
-            <button class="btn btn-dark btn-sm btn-rounded m-r-10"><i class="mdi mdi-open-in-new"></i> Acessar
-              Conta</button>
-
-            <button class="btn btn-danger btn-sm btn-rounded m-r-10"><i class="mdi mdi-lock-outline"></i> Bloquear
-              Conta</button>
-
-            <button class="btn btn-outline-danger btn-sm btn-rounded"><i class="mdi mdi-lock-open-outline"></i>
-              Desloquear Conta</button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <hr>
-
-      <div class="card-body">
-
-        <small class="text-muted">Gestor</small>
-
-        <h6>redemundial</h6>
-
-        <small class="text-muted p-t-30 db">Plano</small>
-
-        <h6>Cota Premium</h6>
-
-        <small class="text-muted p-t-30 db">Status</small> <br />
-
-        <span class="label label-success">Ativo</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="col-lg-8 col-xlg-9 col-md-7">
-
-    <div class="card">
-
-      <div class="card-body p-b-0">
-
-        <ul class="nav nav-tabs customtab" role="tablist">
-
-          <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#perfil" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-account"></i></span><span class="hidden-xs-down">
-                Perfil</span></a></li>
-
-          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#address" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-home"></i></span><span class="hidden-xs-down">
-                Endereço</span></a></li>
-
-          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#docs" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-file-document"></i></span> <span class="hidden-xs-down">
-                Documentos</span></a></li>
-
-          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-lock"></i></span> <span class="hidden-xs-down"> Senha</span></a>
-          </li>
-
-          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#extract" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-receipt"></i></span> <span class="hidden-xs-down">
-                Extrato</span></a></li>
-
-          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#invoices" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-currency-usd"></i></span> <span class="hidden-xs-down">
-                Faturas</span></a></li>
-
-          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#withdraws" role="tab"><span
-                class="hidden-sm-up"><i class="mdi mdi-beaker"></i></span> <span class="hidden-xs-down">
-                Saques</span></a></li>
-
-        </ul>
-
-        <div class="tab-content">
-
-          <div class="tab-pane active" id="perfil" role="tabpanel">
-
-            <div class="floating-labels">
-
-              <div class="form-group m-t-40">
-
-                <input id="name" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="name">Nome Completo</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="birth" type="text" class="form-control" mask='00/00/0000'>
-
-                <span class="bar"></span>
-
-                <label for="birth">Data de Nascimento</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="email" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="email">E-mail</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="username" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="username">Username</label>
-
-                <small *ngIf="isUsernameValid==false" class="danger">*Username indisponivel</small>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="phone" type="text" class="form-control" mask='(00) 00000-0000'>
-
-                <span class="bar"></span>
-
-                <label for="phone">Telefone</label>
-
-              </div>
-
-              <div class="form-group text-center p-b-20">
-
-                <div class="col-xs-12">
-
-                  <button type="submit" class="btn btn-outline-primary btn-rounded"><i class="mdi mdi-refresh"></i>
-                    Atualizar</button>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="tab-pane" id="address" role="tabpanel">
-
-            <div class="floating-labels">
-
-              <div class="form-group m-t-40">
-
-                <input id="cep" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="cep">CEP</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="address" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="address">Endereço</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="number" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="number">Número</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="complement" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="complement">Complemento</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="district" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="district">Bairro</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="city" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="city">Cidade</label>
-
-              </div>
-
-              <div class="form-group m-t-40">
-
-                <input id="state" type="text" class="form-control">
-
-                <span class="bar"></span>
-
-                <label for="state">Estado</label>
-
-              </div>
-
-              <div class="form-group text-center p-b-20">
-
-                <div class="col-xs-12">
-
-                  <button type="submit" class="btn btn-outline-primary btn-rounded"><i class="mdi mdi-refresh"></i>
-                    Atualizar</button>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="tab-pane" id="docs" role="tabpanel">
-
-            <div class="row el-element-overlay">
-
-              <div class="col-md-12" gallerize>
-
-                <div class="col-lg-3 col-md-6" *ngFor="let img of imageData">
-
-                  <div class="card">
-
-                    <div class="el-card-item">
-
-                      <div class="el-card-avatar el-overlay-1">
-
-                        <img [src]="img.srcUrl" alt="documento">
-
-                      </div>
-
-                      <div class="el-card-content">
-
-                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
-
-                      </div>
+                        </div>
 
                     </div>
 
-                  </div>
+                    <div class="row text-center justify-content-md-center m-t-20">
+
+                        <button class="btn btn-dark btn-sm btn-rounded m-r-10"><i class="mdi mdi-open-in-new"></i> Acessar
+Conta</button>
+
+                        <button class="btn btn-danger btn-sm btn-rounded m-r-10"><i class="mdi mdi-lock-outline"></i> Bloquear
+Conta</button>
+
+                        <button class="btn btn-outline-danger btn-sm btn-rounded"><i class="mdi mdi-lock-open-outline"></i>
+Desloquear Conta</button>
+
+                    </div>
 
                 </div>
 
-              </div>
+            </div>
 
-          </div>
+            <hr>
+
+            <div class="card-body">
+
+                <small class="text-muted">Gestor</small>
+
+                <h6>redemundial</h6>
+
+                <small class="text-muted p-t-30 db">Plano</small>
+
+                <h6>Cota Premium</h6>
+
+                <small class="text-muted p-t-30 db">Status</small> <br />
+
+                <span class="label label-success">Ativo</span>
+
+            </div>
 
         </div>
 
-      </div>
-
     </div>
 
-  </div>
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+
+        <div class="card">
+
+            <div class="card-body p-b-0">
+
+                <ul class="nav nav-tabs customtab" role="tablist">
+
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#perfil" role="tab"><span
+class="hidden-sm-up"></span><span class="hidden-xs-down">
+Perfil</span></a></li>
+
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#address" role="tab"><span
+class="hidden-sm-up"></span><span class="hidden-xs-down">
+Endereço</span></a></li>
+
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#docs" role="tab"><span
+class="hidden-sm-up"></span> <span class="hidden-xs-down">
+Documentos</span></a></li>
+
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password" role="tab"><span
+class="hidden-sm-up"></span> <span class="hidden-xs-down"> Senha</span></a>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#extract" role="tab"><span
+class="hidden-sm-up"></span> <span class="hidden-xs-down">
+Extrato</span></a></li>
+
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#transactions" role="tab"><span
+class="hidden-sm-up"></span> <span class="hidden-xs-down">
+Transações</span></a></li>
+
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="perfil" role="tabpanel">
+
+                        <div class="floating-labels">
+
+                            <div class="form-group m-t-40">
+
+                                <input id="name" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="name">Nome Completo</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="birth" type="text" class="form-control" mask='00/00/0000'>
+
+                                <span class="bar"></span>
+
+                                <label for="birth">Data de Nascimento</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="email" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="email">E-mail</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="username" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="username">Username</label>
+
+                                <small *ngIf="isUsernameValid==false" class="danger">*Username indisponivel</small>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="phone" type="text" class="form-control" mask='(00) 00000-0000'>
+
+                                <span class="bar"></span>
+
+                                <label for="phone">Telefone</label>
+
+                            </div>
+
+                            <div class="form-group text-center p-b-20">
+
+                                <div class="col-xs-12">
+
+                                    <button type="submit" class="btn btn-outline-primary btn-rounded"><i class="mdi mdi-refresh"></i> Atualizar</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="address" role="tabpanel">
+
+                        <div class="floating-labels">
+
+                            <div class="form-group m-t-40">
+
+                                <input id="cep" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="cep">CEP</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="address" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="address">Endereço</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="number" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="number">Número</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="complement" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="complement">Complemento</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="district" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="district">Bairro</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="city" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="city">Cidade</label>
+
+                            </div>
+
+                            <div class="form-group m-t-40">
+
+                                <input id="state" type="text" class="form-control">
+
+                                <span class="bar"></span>
+
+                                <label for="state">Estado</label>
+
+                            </div>
+
+                            <div class="form-group text-center p-b-20">
+
+                                <div class="col-xs-12">
+
+                                    <button type="submit" class="btn btn-outline-primary btn-rounded"><i class="mdi mdi-refresh"></i> Atualizar</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="docs" role="tabpanel">
+
+                        <div class="container m-t-40 m-b-40" gallerize>
+
+                            <img class="img-thumbnail m-t-10 m-r-10" *ngFor="let img of imageData" [src]="img.srcUrl" width="200">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

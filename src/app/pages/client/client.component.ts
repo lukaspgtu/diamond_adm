@@ -47,15 +47,15 @@ const data = [
     previewUrl: '../assets/images/big/img1.jpg'
   },
   {
-    srcUrl: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
-    previewUrl: 'https://preview.ibb.co/kPE1D6/clouds.jpg'
+    srcUrl: '../assets/images/big/img1.jpg',
+    previewUrl: '../assets/images/big/img1.jpg'
   },
   {
-    srcUrl: 'https://preview.ibb.co/mwsA6R/img7.jpg',
-    previewUrl: 'https://preview.ibb.co/mwsA6R/img7.jpg'
+    srcUrl: '../assets/images/big/img1.jpg',
+    previewUrl: '../assets/images/big/img1.jpg'
   },
   {
-    srcUrl: 'https://preview.ibb.co/kZGsLm/img8.jpg',
-    previewUrl: 'https://preview.ibb.co/kZGsLm/img8.jpg'
+    srcUrl: '../assets/images/big/img1.jpg',
+    previewUrl: '../assets/images/big/img1.jpg'
   }
 ];
