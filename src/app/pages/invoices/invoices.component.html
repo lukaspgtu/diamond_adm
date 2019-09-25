@@ -16,21 +16,16 @@
 
         <div class="row">
 
-          <div class="justify-content-center input-group m-b-40">
+          <div class="col-sm-4 input-group">
 
-            <select class="form-control radius-0 col-sm-1">
+            <div class="floating-labels">
 
-              <option>Todas</option>
+              <input class="form-control date" [(ngModel)]="date_begin" ngbDatepicker [footerTemplate]="footerTemplate"
+                #begin="ngbDatepicker" (click)="begin.toggle()" readonly [minDate]="begin_min" [maxDate]="begin_max">
 
-              <option>Pagas</option>
+              <label>Início</label>
 
-              <option>Pendentes</option>
-
-            </select>
-
-            <input class="form-control radius-0 col-sm-1" placeholder="Data Inicial" name="dp" [(ngModel)]="date_begin"
-              ngbDatepicker [footerTemplate]="footerTemplate" #begin="ngbDatepicker" (dateSelect)="checkBegin()"
-              (click)="begin.toggle()" readonly [minDate]="begin_min" [maxDate]="begin_max">
+            </div>
 
             <div class="input-group-append">
 
@@ -39,19 +34,27 @@
 
             </div>
 
-            <input class="form-control radius-0 col-sm-1" placeholder="Data Final" name="dp" [(ngModel)]="date_end"
-              ngbDatepicker [footerTemplate]="footerTemplate" #end="ngbDatepicker" (click)="end.toggle()" readonly
-              (dateSelect)="checkEnd()" [minDate]="end_min" [maxDate]="end_max">
+            <div class="floating-labels">
 
-            <div class="input-group-append">
+              <input class="form-control date" [(ngModel)]="date_end" ngbDatepicker [footerTemplate]="footerTemplate"
+                #end="ngbDatepicker" (click)="end.toggle()" readonly [minDate]="end_min" [maxDate]="end_max">
 
-              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="end.toggle()"
-                id="button_end"></button>
+              <label>Fim</label>
 
             </div>
 
+            <div class="input-group-append">
 
-            <input type="text" class="form-control radius-0 col-sm-2 user" placeholder="Usuário">
+              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"
+                id="button_begin"></button>
+
+            </div>
+
+          </div>
+
+          <div class="col-sm-4 input-group">
+
+            <input type="text" class="form-control radius-0" placeholder="Procurar por usuário">
 
             <span class="input-group-btn">
 
@@ -61,11 +64,34 @@
 
           </div>
 
+          <div class="col-sm-4">
+
+            <div class="dropdown filters">
+
+              <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Filtros</button>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                <h6 class="dropdown-header">Filtrar por status</h6>
+
+                <a class="dropdown-item" href="#">Todas</a>
+
+                <a class="dropdown-item" href="#">Pagas</a>
+
+                <a class="dropdown-item" href="#">Pendentes</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
         <!-- search -->
 
-        <div class="table-responsive">
+        <div class="table-responsive m-t-20">
 
           <table class="table table-hover">
 
@@ -139,7 +165,7 @@
 
                 <td>
 
-                    <img class="m-r-10" src="https://diamondtrader.co/api/img/premium.png" width="30"> Cota Premium
+                  <img class="m-r-10" src="https://diamondtrader.co/api/img/premium.png" width="30"> Cota Premium
 
                 </td>
 
