@@ -16,30 +16,43 @@
 
         <div class="row">
 
-          <div class="justify-content-center input-group m-b-40">
+          <div class="col-sm-4 input-group">
 
-            <select class="form-control radius-0 col-sm-2">
+            <div class="floating-labels">
 
-              <option>Todos</option>
+              <input class="form-control date" ngbDatepicker [footerTemplate]="footerTemplate" #begin="ngbDatepicker"
+                (click)="begin.toggle()" readonly [minDate]="date_min" [maxDate]="date_end" [(ngModel)]="date_begin">
 
-              <option>Saldo Bônus</option>
-
-              <option>Saldo Rendimento</option>
-
-            </select>
-
-            <input class="form-control radius-0 col-sm-1" placeholder="Data" name="dp" [(ngModel)]="date_begin"
-              ngbDatepicker [footerTemplate]="footerTemplate" #begin="ngbDatepicker" (dateSelect)="checkBegin()"
-              (click)="begin.toggle()" readonly [minDate]="begin_min" [maxDate]="begin_max">
-
-            <div class="input-group-append">
-
-              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"
-                id="button_begin"></button>
+              <label>Início</label>
 
             </div>
 
-            <input type="text" class="form-control radius-0 col-sm-2 user" placeholder="Usuário">
+            <div class="input-group-append">
+
+              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"></button>
+
+            </div>
+
+            <div class="floating-labels">
+
+              <input class="form-control date" ngbDatepicker [footerTemplate]="footerTemplate" #end="ngbDatepicker"
+                (click)="end.toggle()" readonly [minDate]="date_begin" [maxDate]="date_max" [(ngModel)]="date_end">
+
+              <label>Fim</label>
+
+            </div>
+
+            <div class="input-group-append">
+
+              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="end.toggle()"></button>
+
+            </div>
+
+          </div>
+
+          <div class="col-sm-4 input-group">
+
+            <input type="text" class="form-control radius-0" placeholder="Procurar por usuário">
 
             <span class="input-group-btn">
 
@@ -49,11 +62,34 @@
 
           </div>
 
+          <div class="col-sm-4">
+
+            <div class="dropdown filters">
+
+              <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Filtros</button>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                <h6 class="dropdown-header">Filtrar por status</h6>
+
+                <a class="dropdown-item" href="#">Todas</a>
+
+                <a class="dropdown-item" href="#">Pagas</a>
+
+                <a class="dropdown-item" href="#">Pendentes</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
         <!-- search -->
 
-        <div class="table-responsive">
+        <div class="table-responsive m-t-20">
 
           <table class="table table-hover">
 
@@ -61,7 +97,7 @@
 
               <tr>
 
-                <th>Solicitação</th>
+                <th>Data de Solicitação</th>
 
                 <th>Usuário</th>
 

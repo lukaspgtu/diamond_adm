@@ -20,8 +20,8 @@
 
             <div class="floating-labels">
 
-              <input class="form-control date" [(ngModel)]="date_begin" ngbDatepicker [footerTemplate]="footerTemplate"
-                #begin="ngbDatepicker" (click)="begin.toggle()" readonly [minDate]="begin_min" [maxDate]="begin_max">
+              <input class="form-control date" ngbDatepicker [footerTemplate]="footerTemplate" #begin="ngbDatepicker"
+                (click)="begin.toggle()" readonly [minDate]="date_min" [maxDate]="date_end" [(ngModel)]="date_begin">
 
               <label>Início</label>
 
@@ -29,15 +29,14 @@
 
             <div class="input-group-append">
 
-              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"
-                id="button_begin"></button>
+              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"></button>
 
             </div>
 
             <div class="floating-labels">
 
-              <input class="form-control date" [(ngModel)]="date_end" ngbDatepicker [footerTemplate]="footerTemplate"
-                #end="ngbDatepicker" (click)="end.toggle()" readonly [minDate]="end_min" [maxDate]="end_max">
+              <input class="form-control date" ngbDatepicker [footerTemplate]="footerTemplate" #end="ngbDatepicker"
+                (click)="end.toggle()" readonly [minDate]="date_begin" [maxDate]="date_max" [(ngModel)]="date_end">
 
               <label>Fim</label>
 
@@ -45,8 +44,7 @@
 
             <div class="input-group-append">
 
-              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="begin.toggle()"
-                id="button_begin"></button>
+              <button class="btn btn-outline-secondary fa fa-calendar calendar" (click)="end.toggle()"></button>
 
             </div>
 
