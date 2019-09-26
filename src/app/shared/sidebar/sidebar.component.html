@@ -1,69 +1,77 @@
 <nav class="sidebar-nav">
-    <ul id="sidebarnav">
-        <li class="nav-devider"></li>
-        <!-- First level menu -->
-        <li class="sidebar-item">
-            <a class="sidebar-link waves-effect waves-dark" routerLink="/home" routerLinkActive="'active'">
-                <i class="mdi mdi-home"></i>
-                <span class="hide-menu">Home</span>
-            </a>
+  <ul id="sidebarnav">
+    <!-- First level menu -->
+    <li class="sidebar-item">
+      <a class="sidebar-link waves-effect waves-dark" routerLink="/home" routerLinkActive="'active'">
+        <i class="mdi mdi-home"></i>
+        <span class="hide-menu">Home</span>
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link waves-effect waves-dark" routerLink="/plans" routerLinkActive="'active'">
+        <i class="mdi mdi-diamond"></i>
+        <span class="hide-menu">Planos</span>
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link waves-effect waves-dark" routerLink="/network" aria-expanded="false">
+        <i class="mdi mdi-currency-usd"></i>
+        <span class="hide-menu">Rede</span>
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a class="has-arrow sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+        <i class="mdi mdi-account-multiple"></i>
+        <span class="hide-menu">Clientes</span>
+      </a>
+      <ul aria-expanded="false" class="collapse">
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/clients">Consultar</a>
         </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link waves-effect waves-dark" routerLink="/plans" routerLinkActive="'active'">
-                <i class="mdi mdi-diamond"></i>
-                <span class="hide-menu">Planos</span>
-            </a>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/additionalScore">Pontuação Adicional</a>
         </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link waves-effect waves-dark" routerLink="/network" aria-expanded="false">
-                <i class="mdi mdi-currency-usd"></i>
-                <span class="hide-menu">Rede</span>
-            </a>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/gainLimits">Limites de Ganho</a>
         </li>
-        <li class="sidebar-item">
-            <a class="has-arrow sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                <i class="mdi mdi-account-multiple"></i>
-                <span class="hide-menu">Clientes</span>
-            </a>
-            <ul aria-expanded="false" class="collapse">
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" routerLink="/clients">Consultar</a>
-                </li>
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" routerLink="#">Documentos</a>
-                </li>
-            </ul>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/documents">Documentos</a>
         </li>
-        <li class="sidebar-item">
-            <a class="has-arrow sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                <i class="mdi mdi-currency-usd"></i>
-                <span class="hide-menu">Financeiro</span>
-            </a>
-            <ul aria-expanded="false" class="collapse">
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" routerLink="/invoices">Faturas</a>
-                </li>
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" routerLink="/withdraws">Saques</a>
-                </li>
-            </ul>
+      </ul>
+    </li>
+    <li class="sidebar-item">
+      <a class="has-arrow sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+        <i class="mdi mdi-currency-usd"></i>
+        <span class="hide-menu">Financeiro</span>
+      </a>
+      <ul aria-expanded="false" class="collapse">
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/invoices">Faturas</a>
         </li>
-        <li class="sidebar-item">
-            <a class="has-arrow sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                <i class="mdi mdi-settings"></i>
-                <span class="hide-menu">Configurações</span>
-            </a>
-            <ul aria-expanded="false" class="collapse">
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" href="app-email.html">Perfil</a>
-                </li>
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" href="app-email-detail.html">Alterar Senha</a>
-                </li>
-                <li class="sidebar-item sub-item">
-                    <a class="sidebar-link" href="app-compose.html">Google Authenticator</a>
-                </li>
-            </ul>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/withdraws">Saques</a>
         </li>
-    </ul>
+      </ul>
+    </li>
+    <li class="sidebar-item">
+      <a class="has-arrow sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+        <i class="mdi mdi-settings"></i>
+        <span class="hide-menu">Configurações</span>
+      </a>
+      <ul aria-expanded="false" class="collapse">
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/settings/account">Minha Conta</a>
+        </li>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/settings/password">Alterar Senha</a>
+        </li>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/settings/master">Alterar Master</a>
+        </li>
+        <li class="sidebar-item sub-item">
+          <a class="sidebar-link" routerLink="/settings/system">Sistema</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </nav>

@@ -49,6 +49,16 @@ import { InvoiceComponent } from './pages/invoice/invoice.component';
 import { WithdrawsComponent } from './pages/withdraws/withdraws.component';
 import { NgbDateCustomParserFormatter } from './dateformat';
 import { I18n, CustomDatepickerI18n } from './CustomDatepickerI18n';
+import { AdditionalScoreComponent } from './pages/additional-score/additional-score.component';
+
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { GainLimitsComponent } from './pages/gain-limits/gain-limits.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { AccountComponent } from './pages/account/account.component';
+import { PasswordComponent } from './pages/password/password.component';
+import { MasterComponent } from './pages/master/master.component';
+import { SystemComponent } from './pages/system/system.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -75,7 +85,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ClientsComponent,
     ClientComponent,
     InvoiceComponent,
-    WithdrawsComponent
+    WithdrawsComponent,
+    AdditionalScoreComponent,
+    GainLimitsComponent,
+    DocumentsComponent,
+    AccountComponent,
+    PasswordComponent,
+    MasterComponent,
+    SystemComponent
   ],
   imports: [
     CommonModule,
@@ -93,6 +110,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     GalleryModule,
     LightboxModule,
     GallerizeModule,
+    ModalModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: function tokenGetter() {

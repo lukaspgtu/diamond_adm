@@ -23,7 +23,14 @@
                     <b class="logo-icon">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Light Logo icon -->
-                        <img *ngIf="dateService" src="{{dateService.logo}}" alt="homepage" width="136"
+                        <img *ngIf="dateService" src="{{ dateService.logo }}" alt="homepage" width="136"
+                            class="dark-logo" />
+                    </b>
+
+                    <b class="logo-icon mini">
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Light Logo icon -->
+                        <img *ngIf="dateService" src="../../assets/images/logo/logo-mini.png" alt="homepage" width="50"
                             class="dark-logo" />
                     </b>
                     <!--End Logo icon -->
@@ -68,36 +75,6 @@
     <aside class="left-sidebar" data-sidebarbg="skin6" (mouseover)="Logo()" (mouseout)="Logo()">
         <!-- Sidebar scroll-->
         <div class="scroll-sidebar" [perfectScrollbar]="config" *ngIf="user">
-            <div class="user-profile">
-                <!-- User profile image -->
-                <div class="profile-img"> <img src="assets/images/users/profile.jpg" alt="user" />
-                    <!-- this is blinking heartbit-->
-                    <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
-                </div>
-                <!-- User profile text-->
-                <div class="profile-text">
-                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="true">{{user.name.split(' ')[0]}}<i
-                            class="fa fa-angle-down"></i></a>
-                    <div class="dropdown-menu animated flipInY">
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
-                        <!-- text-->
-                        <div class="dropdown-divider"></div>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-                        <!-- text-->
-                        <div class="dropdown-divider"></div>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
-                        <!-- text-->
-                    </div>
-                </div>
-            </div>
             <app-sidebar></app-sidebar>
         </div>
     </aside>

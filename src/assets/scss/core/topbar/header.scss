@@ -35,14 +35,14 @@
            padding: $topbar-navlink-padding;
            font-size: $topbar-navlink-font-size;
            line-height: $topbar-navlink-height;
-           height:$topbar-navlink-height;       
-           
+           height:$topbar-navlink-height;
+
         }
         .navbar-nav>.nav-item{
             transition: 0.2s ease-in;
             &:hover{
                 background: $transparent-dark-bg;
-            }    
+            }
         }
 		.app-search {
 		  position: relative
@@ -98,7 +98,7 @@
         min-width: 280px;
     }
     .nav-toggler, .topbartoggler{
-        color:$theme-light;
+        color:$theme-dark;
         padding: 0 15px;
     }
 }
@@ -186,6 +186,6 @@ Topbar Responsive
                 display: none;
             }
         }
-        
+
     }
 }

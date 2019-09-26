@@ -14,29 +14,38 @@
 
         <div class="row">
 
-          <div class="justify-content-center input-group m-b-40">
+          <div class="justify-content-center input-group">
 
-            <select class="form-control radius-0 col-sm-1">
-
-              <option>Todos</option>
-
-              <option>Ativos</option>
-
-              <option>Inativos</option>
-
-              <option>Expirados</option>
-
-              <option>Bloqueados</option>
-
-            </select>
-
-            <input type="text" class="form-control radius-0 col-sm-2" placeholder="Buscar por usuário">
+            <input type="text" class="form-control radius-0 search" placeholder="Buscar por usuário">
 
             <span class="input-group-btn">
 
               <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
 
             </span>
+
+            <div class="dropdown filters">
+
+              <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Filtros</button>
+
+              <div class="dropdown-menu animated flipInY m-t-40" aria-labelledby="dropdownMenuButton">
+
+                <h6 class="dropdown-header">Filtrar por status</h6>
+
+                <a class="dropdown-item" href="#">Todos</a>
+
+                <a class="dropdown-item" href="#">Ativo</a>
+
+                <a class="dropdown-item" href="#">Inativo</a>
+
+                <a class="dropdown-item" href="#">Expirado</a>
+
+                <a class="dropdown-item" href="#">Bloqueado</a>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -60,7 +69,7 @@
 
                 <th>Plano</th>
 
-                <th class="text-center">Status</th>
+                <th width="1">Status</th>
 
               </tr>
 
@@ -100,9 +109,9 @@
 
                 </td>
 
-                <td class="text-center">
+                <td>
 
-                  <span class="label label-success">Ativo</span>
+                  <span class="block label label-success text-center">Ativo</span>
 
                 </td>
 
@@ -140,9 +149,9 @@
 
                 </td>
 
-                <td class="text-center">
+                <td>
 
-                  <span class="label label-default">Inativo</span>
+                  <span class="block label label-default text-center">Inativo</span>
 
                 </td>
 
@@ -180,9 +189,9 @@
 
                 </td>
 
-                <td class="text-center">
+                <td>
 
-                  <span class="label label-warning">Expirado</span>
+                  <span class="block label label-warning text-center">Expirado</span>
 
                 </td>
 
@@ -220,249 +229,9 @@
 
                 </td>
 
-                <td class="text-center">
-
-                  <span class="label label-danger">Bloqueado</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
                 <td>
 
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td class="text-center">
-
-                  <span class="label label-success">Ativo</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td class="text-center">
-
-                  <span class="label label-default">Inativo</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td class="text-center">
-
-                  <span class="label label-warning">Expirado</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td class="text-center">
-
-                  <span class="label label-danger">Bloqueado</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td class="text-center">
-
-                  <span class="label label-success">Ativo</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td class="text-center">
-
-                  <span class="label label-default">Inativo</span>
+                  <span class="block label label-danger text-center">Bloqueado</span>
 
                 </td>
 

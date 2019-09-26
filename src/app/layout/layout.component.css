@@ -1,0 +1,25 @@
+.logo-icon.mini {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+
+  .logo-icon {
+    display: none;
+  }
+
+  .logo-icon.mini {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .logo-icon {
+    display: block;
+  }
+
+  .logo-icon.mini {
+    display: none;
+  }
+}

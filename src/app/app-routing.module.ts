@@ -12,6 +12,13 @@ import { ClientComponent } from './pages/client/client.component';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
 import { WithdrawsComponent } from './pages/withdraws/withdraws.component';
+import { AdditionalScoreComponent } from './pages/additional-score/additional-score.component';
+import { GainLimitsComponent } from './pages/gain-limits/gain-limits.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { AccountComponent } from './pages/account/account.component';
+import { PasswordComponent } from './pages/password/password.component';
+import { MasterComponent } from './pages/master/master.component';
+import { SystemComponent } from './pages/system/system.component';
 
 export const Approutes: Routes = [
 
@@ -50,6 +57,18 @@ export const Approutes: Routes = [
         component: ClientComponent
       },
       {
+        path: 'additionalScore',
+        component: AdditionalScoreComponent
+      },
+      {
+        path: 'gainLimits',
+        component: GainLimitsComponent
+      },
+      {
+        path: 'documents',
+        component: DocumentsComponent
+      },
+      {
         path: 'invoices',
         component: InvoicesComponent
       },
@@ -60,6 +79,22 @@ export const Approutes: Routes = [
       {
         path: 'withdraws',
         component: WithdrawsComponent
+      },
+      {
+        path: 'settings/account',
+        component: AccountComponent
+      },
+      {
+        path: 'settings/password',
+        component: PasswordComponent
+      },
+      {
+        path: 'settings/master',
+        component: MasterComponent
+      },
+      {
+        path: 'settings/system',
+        component: SystemComponent
       }
     ]
   }
