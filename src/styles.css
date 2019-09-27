@@ -327,6 +327,10 @@ body {
   color: #eda54b;
 }
 
+.no-border {
+  border: 0px !important;
+}
+
 @media (max-width: 767px) {
   .vtabs .tabs-vertical {
     width: auto;

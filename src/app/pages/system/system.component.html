@@ -12,46 +12,296 @@
 
       <div class="card-body">
 
-        <div class="vtabs customvtab">
+        <div class="card-body p-b-0">
 
-          <ul class="nav nav-tabs tabs-vertical" role="tablist">
+          <ul class="nav nav-tabs customtab" role="tablist">
 
-            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><span
-                  class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down"> Admins</span> </a>
+            <li class="nav-item">
+
+              <a class="nav-link active" data-toggle="tab" href="#admins" role="tab">
+
+                <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i
+                    class="mdi mdi-account-settings-variant"></i> Admins</span>
+
+              </a>
+
             </li>
 
-            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><span
-                  class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down"> Logs</span></a>
+            <li class="nav-item">
+
+              <a class="nav-link" data-toggle="tab" href="#logs" role="tab">
+
+                <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="mdi mdi-pin"></i>
+                  Logs</span>
+
+              </a>
+
             </li>
 
-            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><span
-                  class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down"> Rendimento</span></a>
+            <li class="nav-item">
+
+              <a class="nav-link" data-toggle="tab" href="#income" role="tab">
+
+                <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="ti-stats-up"></i>
+                  Rendimento</span>
+
+              </a>
+
             </li>
 
-            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><span
-                  class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down"> Saque</span></a>
+            <li class="nav-item">
+
+              <a class="nav-link" data-toggle="tab" href="#withdraws" role="tab">
+
+                <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="ti-import"></i> Saque</span>
+
+              </a>
+
             </li>
 
-            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><span
-                  class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down"> Taxas</span></a>
+            <li class="nav-item">
+
+              <a class="nav-link" data-toggle="tab" href="#fee" role="tab">
+
+                <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="mdi mdi-percent"></i>
+                  Taxas</span>
+
+              </a>
+
             </li>
 
           </ul>
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div class="tab-pane active" id="home3" role="tabpanel">
-              <div class="p-20">
-                <h3>Best Clean Tab ever</h3>
-                <h4>you can use it with the small code</h4>
-                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                  imperdiet a.</p>
-              </div>
-            </div>
-            <div class="tab-pane  p-20" id="profile3" role="tabpanel">2</div>
-            <div class="tab-pane p-20" id="messages3" role="tabpanel">3</div>
-          </div>
-        </div>
 
+          <div class="tab-content">
+
+            <div class="tab-pane active" id="admins" role="tabpanel">
+
+              <div class="d-flex justify-content-between m-t-40">
+
+                <h3>Administradores</h3>
+
+                <button class="btn btn-primary btn-rounded" (click)="openModal(create_admin)"><i class="ti-plus"></i>
+                  Cadastrar</button>
+
+              </div>
+
+              <div class="table-responsive m-t-20">
+
+                <table class="table table-striped">
+
+                  <thead>
+
+                    <tr>
+
+                      <th>Data do Cadastro</th>
+
+                      <th>Nome</th>
+
+                      <th>E-mail</th>
+
+                      <th>Tipo</th>
+
+                      <th></th>
+
+                    </tr>
+
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+
+                      <td>
+
+                        11 set 2019 às 18:06:50
+
+                      </td>
+
+                      <td>
+
+                        Lucas Moraes Campos
+
+                      </td>
+
+                      <td>
+
+                        lukaspgtu@hotmail.com
+
+                      </td>
+
+                      <td>
+
+                        Master
+
+                      </td>
+
+                      <td>
+
+                        <a href="javascript:void(0)" class="m-r-15" data-toggle="tooltip" data-placement="top"
+                          title="Alterar" (click)="openModal(change_admin)">
+
+                          <i class="ti-pencil-alt pointer text-primary"></i>
+
+                        </a>
+
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Excluir">
+
+                          <i class="ti-trash pointer text-primary"></i>
+
+                        </a>
+
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+                <h6>Exibindo 10 de 10 faturas encontradas</h6>
+
+              </div>
+
+            </div>
+
+            <div class="tab-pane" id="logs" role="tabpanel">
+
+              <div class="d-flex justify-content-between m-t-40">
+
+                <h3>Logs</h3>
+
+              </div>
+
+              <div class="table-responsive m-t-20">
+
+                <table class="table table-striped">
+
+                  <thead>
+
+                    <tr>
+
+                      <th>Data</th>
+
+                      <th>Admin</th>
+
+                      <th>Descrição</th>
+
+                      <th></th>
+
+                    </tr>
+
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+
+                      <td>
+
+                        11 set 2019 às 18:06:50
+
+                      </td>
+
+                      <td>
+
+                        Lucas Moraes Campos
+
+                      </td>
+
+                      <td>
+
+                        Baixa de pagamento
+
+                      </td>
+
+                      <td>
+
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Ver"
+                          (click)="openModal(log)">
+
+                          <i class="ti-eye pointer text-primary"></i>
+
+                        </a>
+
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+                <h6>Exibindo 10 de 10 faturas encontradas</h6>
+
+              </div>
+
+            </div>
+
+            <div class="tab-pane" id="income" role="tabpanel">
+
+              <div class="d-flex justify-content-between m-t-40">
+
+                <h3>Rendimento</h3>
+
+              </div>
+
+              <div class="row m-t-20">
+
+                <div class="col-sm-12">
+
+                  <span class="weight-500">Próximo Pagamento:</span>
+
+                  <span class="m-l-10 text-primary weight-500">0.98%</span>
+
+                  <button class="btn btn-outline-primary btn-rounded btn-xs m-l-10"
+                    (click)="openModal(income_value, 'modal-sm')"><i class="ti-pencil"></i>
+                    Alterar</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="tab-pane" id="withdraws" role="tabpanel">
+
+              <div class="d-flex justify-content-between m-t-40">
+
+                <h3>Saque</h3>
+
+              </div>
+
+              <div class="row m-t-20">
+
+                <div class="col-sm-12">
+
+                  <div class="alert alert-info alert-dismissable alert-style-1 m-b-40">
+
+                    <i class="mdi mdi-information-outline"></i> O saque já está programado para ser ligado/desligado automaticamente. Uma vez for ligado manualmente também deverá ser desligado manualmente!
+
+                  </div>
+
+                  <span class="material-switch pull-right">
+
+                    <span class="lb1">Off</span>
+
+                    <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox" />
+
+                    <label for="someSwitchOptionPrimary" class="label-primary"></label>
+
+                    <span class="lb2">On</span>
+
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -60,3 +310,226 @@
   </div>
 
 </div>
+
+<ng-template #change_admin>
+
+  <div class="modal-header center no-border">
+
+    <h3 class="modal-title">Alterar Admin</h3>
+
+  </div>
+
+  <div class="modal-body">
+
+    <div class="form-group m-t-20">
+
+      <label for="name">Nome</label>
+
+      <input id="name" type="text" class="form-control">
+
+    </div>
+
+    <div class="form-group m-t-20">
+
+      <label for="email">E-mail</label>
+
+      <input id="email" type="text" class="form-control">
+
+    </div>
+
+    <div class="form-group m-t-20">
+
+      <label for="type">Tipo</label>
+
+      <select id="type" class="form-control">
+
+        <option>Master</option>
+
+        <option>Suporte</option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group m-t-40 text-right">
+
+      <button class="btn btn-outline-primary btn-rounded m-r-5" (click)="modalRef.hide()"><i class="ti-close"></i>
+        Cancelar</button>
+
+      <button class="btn btn-primary btn-rounded"><i class="ti-reload"></i>
+        Atualizar</button>
+
+    </div>
+
+  </div>
+
+</ng-template>
+
+<ng-template #create_admin>
+
+  <div class="modal-header center no-border">
+
+    <h3 class="modal-title">Cadastrar Admin</h3>
+
+  </div>
+
+  <div class="modal-body">
+
+    <div class="form-group m-t-20">
+
+      <label for="name">Nome</label>
+
+      <input id="name" type="text" class="form-control">
+
+    </div>
+
+    <div class="form-group m-t-20">
+
+      <label for="email">E-mail</label>
+
+      <input id="email" type="text" class="form-control">
+
+    </div>
+
+    <div class="form-group m-t-20">
+
+      <label for="password">Password</label>
+
+      <input id="password" type="password" class="form-control">
+
+    </div>
+
+    <div class="form-group m-t-20">
+
+      <label for="confirm">Confirmar Senha</label>
+
+      <input id="confirm" type="password" class="form-control">
+
+    </div>
+
+    <div class="form-group m-t-20">
+
+      <label for="type">Tipo</label>
+
+      <select id="type" class="form-control">
+
+        <option hidden>Selecione</option>
+
+        <option>Master</option>
+
+        <option>Suporte</option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group m-t-40 text-right">
+
+      <button class="btn btn-outline-primary btn-rounded m-r-5" (click)="modalRef.hide()"><i class="ti-close"></i>
+        Cancelar</button>
+
+      <button class="btn btn-primary btn-rounded"><i class="ti-check"></i>
+        Cadastrar</button>
+
+    </div>
+
+  </div>
+
+</ng-template>
+
+<ng-template #log>
+
+  <div class="modal-header no-border">
+
+    <h3 class="modal-title">Log</h3>
+
+    <button type="button" class="close float-right" aria-label="Close" (click)="modalRef.hide()">
+
+      <span aria-hidden="true">&times;</span>
+
+    </button>
+
+  </div>
+
+  <div class="modal-body">
+
+    <div class="text-center">
+
+      <div class="m-b-20">
+
+        <strong>Data:</strong>
+
+        <span class="block">11 Out 2019 às 11:34</span>
+
+      </div>
+
+      <div class="m-b-20">
+
+        <strong>Descrição:</strong>
+
+        <span class="block">Baixa de pagamento</span>
+
+      </div>
+
+      <div class="m-b-20">
+
+        <strong>Admin:</strong>
+
+        <span class="block">Lucas Moraes Campos</span>
+
+      </div>
+
+      <div class="m-b-20">
+
+        <strong>Cliente:</strong>
+
+        <span class="block">Lucas Moraes Campos</span>
+
+      </div>
+
+      <div class="form-group m-t-40 text-center">
+
+        <a href="#" class="btn btn-primary btn-rounded" target="_blank"><i class="ti-receipt"></i>
+          Fatura</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ng-template>
+
+
+<ng-template #income_value>
+
+  <div class="modal-header center no-border">
+
+    <h4 class="modal-title">Income</h4>
+
+  </div>
+
+  <div class="modal-body">
+
+    <div class="form-group m-t-10">
+
+      <label for="valor">Valor</label>
+
+      <input id="valor" type="text" class="form-control" value="0.98">
+
+    </div>
+
+    <div class="form-group m-t-20 text-right">
+
+      <button class="btn btn-outline-primary btn-rounded btn-sm m-r-5" (click)="modalRef.hide()"><i
+          class="ti-close"></i>
+        Cancelar</button>
+
+      <button class="btn btn-primary btn-rounded btn-sm"><i class="ti-save-alt"></i>
+        Salvar</button>
+
+    </div>
+
+  </div>
+
+</ng-template>
