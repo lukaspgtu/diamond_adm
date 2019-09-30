@@ -1,11 +1,11 @@
 // import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 import { NgbModule, NgbDateParserFormatter, NgbDatepickerI18n } from '@ng-bootstrap/ng-bootstrap';
@@ -30,7 +30,6 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { UserService } from './services/user/user.service';
 import { AuthService } from './services/user/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
-import { MoneyPipe } from './_pipes/money.pipe';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PlansComponent } from './pages/plans/plans.component';
 import { NetworkComponent } from './pages/network/network.component';
@@ -50,7 +49,7 @@ import { WithdrawsComponent } from './pages/withdraws/withdraws.component';
 import { NgbDateCustomParserFormatter } from './dateformat';
 import { I18n, CustomDatepickerI18n } from './CustomDatepickerI18n';
 import { AdditionalScoreComponent } from './pages/additional-score/additional-score.component';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { GainLimitsComponent } from './pages/gain-limits/gain-limits.component';
@@ -59,6 +58,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { PasswordComponent } from './pages/password/password.component';
 import { MasterComponent } from './pages/master/master.component';
 import { SystemComponent } from './pages/system/system.component';
+import { SupportComponent } from './pages/support/support.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -78,7 +78,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HomeComponent,
     LayoutComponent,
     RegisterComponent,
-    MoneyPipe,
     PlansComponent,
     NetworkComponent,
     InvoicesComponent,
@@ -92,7 +91,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AccountComponent,
     PasswordComponent,
     MasterComponent,
-    SystemComponent
+    SystemComponent,
+    SupportComponent
   ],
   imports: [
     CommonModule,
@@ -110,6 +110,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     GalleryModule,
     LightboxModule,
     GallerizeModule,
+    AngularEditorModule,
     ModalModule.forRoot(),
     JwtModule.forRoot({
       config: {

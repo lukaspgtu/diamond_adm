@@ -59,17 +59,6 @@
 
             </li>
 
-            <li class="nav-item">
-
-              <a class="nav-link" data-toggle="tab" href="#fee" role="tab">
-
-                <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="mdi mdi-percent"></i>
-                  Taxas</span>
-
-              </a>
-
-            </li>
-
           </ul>
 
           <div class="tab-content">
@@ -277,7 +266,8 @@
 
                   <div class="alert alert-info alert-dismissable alert-style-1 m-b-40">
 
-                    <i class="mdi mdi-information-outline"></i> O saque já está programado para ser ligado/desligado automaticamente. Uma vez for ligado manualmente também deverá ser desligado manualmente!
+                    <i class="mdi mdi-information-outline"></i> O saque já está programado para ser ligado/desligado
+                    automaticamente. Uma vez for ligado manualmente também deverá ser desligado manualmente!
 
                   </div>
 
@@ -290,6 +280,16 @@
                     <label for="someSwitchOptionPrimary" class="label-primary"></label>
 
                     <span class="lb2">On</span>
+
+                  </span>
+
+                  <span class="block weight-500 m-t-30">Taxa de saque:
+
+                    <span class="m-l-10 text-primary">3%</span>
+
+                    <button class="btn btn-outline-primary btn-rounded btn-xs m-l-10"
+                      (click)="openModal(withdraw_fee, 'modal-sm')"><i class="ti-pencil"></i>
+                      Alterar</button>
 
                   </span>
 
@@ -506,6 +506,39 @@
   <div class="modal-header center no-border">
 
     <h4 class="modal-title">Income</h4>
+
+  </div>
+
+  <div class="modal-body">
+
+    <div class="form-group m-t-10">
+
+      <label for="valor">Valor</label>
+
+      <input id="valor" type="text" class="form-control" value="0.98">
+
+    </div>
+
+    <div class="form-group m-t-20 text-right">
+
+      <button class="btn btn-outline-primary btn-rounded btn-sm m-r-5" (click)="modalRef.hide()"><i
+          class="ti-close"></i>
+        Cancelar</button>
+
+      <button class="btn btn-primary btn-rounded btn-sm"><i class="ti-save-alt"></i>
+        Salvar</button>
+
+    </div>
+
+  </div>
+
+</ng-template>
+
+<ng-template #withdraw_fee>
+
+  <div class="modal-header center no-border">
+
+    <h4 class="modal-title">Taxa De Saque</h4>
 
   </div>
 

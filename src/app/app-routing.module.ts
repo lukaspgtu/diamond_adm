@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutComponent } from './layout/layout.component';
-import { AuthGuard } from './_guards/auth.guard'
+import { AuthGuard } from './guards/auth.guard'
 import { RegisterComponent } from './register/register.component';
 import { PlansComponent } from './pages/plans/plans.component';
 import { NetworkComponent } from './pages/network/network.component';
@@ -19,6 +19,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { PasswordComponent } from './pages/password/password.component';
 import { MasterComponent } from './pages/master/master.component';
 import { SystemComponent } from './pages/system/system.component';
+import { SupportComponent } from './pages/support/support.component';
 
 export const Approutes: Routes = [
 
@@ -30,7 +31,8 @@ export const Approutes: Routes = [
   },
   {
     path: '',
-    component: LayoutComponent, canActivate: [AuthGuard],
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'home',
@@ -43,6 +45,10 @@ export const Approutes: Routes = [
       {
         path: 'network',
         component: NetworkComponent
+      },
+      {
+        path: 'support',
+        component: SupportComponent
       },
       {
         path: 'clients',

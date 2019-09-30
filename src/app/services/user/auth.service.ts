@@ -2,17 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { LoadingService } from '../loading/loading.service';
-import { AlertService } from '../alert/alert.service';
 import { ConfigHelper } from 'src/app/helpers/ConfigHelper';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { User } from 'src/app/_models/user.module';
+import { UserModel } from 'src/app/models/UserModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  private currentUserSubject: BehaviorSubject<UserModel>;
+  public currentUser: Observable<UserModel>;
   dateRegister: any
   manager: any
   plan: any
@@ -22,11 +21,11 @@ export class AuthService {
   constructor(private http: HttpClient,
     private spinner: LoadingService
   ) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUserSubject = new BehaviorSubject<UserModel>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get currentUserValue(): User {
+  public get currentUserValue(): UserModel {
     return this.currentUserSubject.value;
   }
 
