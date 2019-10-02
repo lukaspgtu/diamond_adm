@@ -51,37 +51,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle('Home | Diamond Trading')
 
-    this.keyForm = this.fb.group({
-      key: ['']
-    })
 
-
-    //Dados Usuario
-    this.userSrv.viewUser().subscribe(date => {
-      //Verificar se usuario esta logado
-      if (!date.success) {
-        this.auth.logout();
-        this.router.navigate(['/login']);
-      }
-      else {
-        this.user = date.data
-        this.blocked_money = date.blocked_balance
-        this.key_binary = date.data.binary_key
-        this.link = `${ConfigHelper.link}/register/${date.data.token}`
-      }
-    })
-
-    //Dados Plano usuario
-    this.userSrv.dataPlan().subscribe(date => {
-      this.plan = date
-      this.is_qualified = this.plan.is_qualified
-    })
-
-    this.spinner.show();
-
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 3000);
   }
 
   changeKey(key) {
