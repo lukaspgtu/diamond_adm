@@ -26,16 +26,16 @@
       </a>
       <ul aria-expanded="false" class="collapse">
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/clients">Consultar</a>
+          <a class="sidebar-link" routerLink="/clients" routerLinkActive="active">Consultar</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/additionalScore">Pontuação Adicional</a>
+          <a class="sidebar-link" routerLink="/additionalScore" routerLinkActive="active">Pontuação Adicional</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/gainLimits">Limites de Ganho</a>
+          <a class="sidebar-link" routerLink="/gainLimits" routerLinkActive="active">Limites de Ganho</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/documents">Documentos</a>
+          <a class="sidebar-link" routerLink="/documents" routerLinkActive="active">Documentos</a>
         </li>
       </ul>
     </li>
@@ -46,10 +46,10 @@
       </a>
       <ul aria-expanded="false" class="collapse">
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/invoices">Faturas</a>
+          <a class="sidebar-link" routerLink="/invoices" routerLinkActive="active">Faturas</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/withdraws">Saques</a>
+          <a class="sidebar-link" routerLink="/withdraws" routerLinkActive="active">Saques</a>
         </li>
       </ul>
     </li>
@@ -60,23 +60,29 @@
       </a>
       <ul aria-expanded="false" class="collapse">
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/settings/account">Minha Conta</a>
+          <a class="sidebar-link" routerLink="/settings/account" routerLinkActive="active">Minha Conta</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/settings/password">Alterar Senha</a>
+          <a class="sidebar-link" routerLink="/settings/password" routerLinkActive="active">Alterar Senha</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/settings/master">Alterar Master</a>
+          <a class="sidebar-link" routerLink="/settings/master" routerLinkActive="active">Alterar Master</a>
         </li>
         <li class="sidebar-item sub-item">
-          <a class="sidebar-link" routerLink="/settings/system">Sistema</a>
+          <a class="sidebar-link" routerLink="/settings/system" routerLinkActive="active">Sistema</a>
         </li>
       </ul>
     </li>
     <li class="sidebar-item">
-      <a class="sidebar-link waves-effect waves-dark" routerLink="/support" aria-expanded="false">
+      <a class="sidebar-link waves-effect waves-dark" routerLink="/support" aria-expanded="false" routerLinkActive="active">
         <i class="ti-comment-alt"></i>
         <span class="hide-menu">Ticket & Suporte</span>
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link waves-effect waves-dark" (click)="logout()" aria-expanded="false">
+        <i class="mdi mdi-logout"></i>
+        <span class="hide-menu">Sair</span>
       </a>
     </li>
   </ul>

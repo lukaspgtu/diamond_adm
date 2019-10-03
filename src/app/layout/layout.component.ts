@@ -33,15 +33,12 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    //Dados servidor
-    this.dataService.dataServer().subscribe(date => {
-      this.dateService = date.system
-    });
+
 
     //Dados Usuario
-    this.dataService.viewUser().subscribe(date => {
-      this.user = date.data
-    })
+    // this.dataService.viewUser().subscribe(date => {
+    //   this.user = date.data
+    // })
 
     if (this.router.url === '/') {
       this.router.navigate(['/home']);

@@ -12,10 +12,6 @@ import { map } from 'rxjs/operators';
 
 export class UserService {
 
-	headers: HttpHeaders = new HttpHeaders({
-		"Auth": ConfigHelper.authProsystem
-	});
-
 	private url: string = ConfigHelper.Url;
 
 	constructor(private http: HttpClient) {
@@ -63,7 +59,7 @@ export class UserService {
 
 	//Validate SMS
 	public validatePhone(code: string, to: string) {
-		var msg = `Código: ${code}`;		
-		return this.http.post<any>(`https://api.prosystemsc.com/v1/send/sms`, { send: { to: to, msg: msg } }, { headers: this.headers })
+		var msg = `Código: ${code}`;
+		return this.http.post<any>(`https://api.prosystemsc.com/v1/send/sms`, { send: { to: to, msg: msg } })
 	}
 }

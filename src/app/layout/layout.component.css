@@ -2,6 +2,10 @@
   display: none;
 }
 
+.flags {
+  visibility: visible !important;
+}
+
 @media (max-width: 1024px) {
 
   .logo-icon {
@@ -21,5 +25,9 @@
 
   .logo-icon.mini {
     display: none;
+  }
+
+  .flags {
+    visibility: hidden !important;
   }
 }

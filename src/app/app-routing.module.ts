@@ -1,10 +1,8 @@
 import { Routes } from '@angular/router';
-
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthGuard } from './guards/auth.guard'
-import { RegisterComponent } from './register/register.component';
 import { PlansComponent } from './pages/plans/plans.component';
 import { NetworkComponent } from './pages/network/network.component';
 import { ClientsComponent } from './pages/clients/clients.component';
@@ -25,9 +23,6 @@ export const Approutes: Routes = [
 
   {
     path: 'login', component: LoginComponent
-  },
-  {
-    path: 'register/:id', component: RegisterComponent
   },
   {
     path: '',

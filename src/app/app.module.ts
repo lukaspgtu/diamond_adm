@@ -21,10 +21,9 @@ import { SpinnerComponent } from './shared/spinner.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutComponent } from './layout/layout.component';
-import { RegisterComponent } from './register/register.component';
 import { NgxMaskModule } from 'ngx-mask'
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { UserService } from './services/user/user.service';
@@ -46,8 +45,8 @@ import { LightboxModule } from '@ngx-gallery/lightbox';
 import { GallerizeModule } from '@ngx-gallery/gallerize';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
 import { WithdrawsComponent } from './pages/withdraws/withdraws.component';
-import { NgbDateCustomParserFormatter } from './dateformat';
-import { I18n, CustomDatepickerI18n } from './CustomDatepickerI18n';
+import { NgbDateCustomParserFormatter } from './config/dateformat';
+import { I18n, CustomDatepickerI18n } from './config/CustomDatepickerI18n';
 import { AdditionalScoreComponent } from './pages/additional-score/additional-score.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
@@ -77,7 +76,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoginComponent,
     HomeComponent,
     LayoutComponent,
-    RegisterComponent,
     PlansComponent,
     NetworkComponent,
     InvoicesComponent,

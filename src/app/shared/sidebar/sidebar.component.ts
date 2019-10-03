@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { UserService } from 'src/app/services/user/user.service';
+import { AuthService } from 'src/app/services/user/auth.service';
+import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,7 +23,11 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private alert: AlertService
+  ) { }
 
   // End open close
   ngOnInit() {
@@ -43,6 +50,13 @@ export class SidebarComponent implements OnInit {
 
     $('#sidebarnav >li >a.has-arrow').on('click', function (e) {
       e.preventDefault();
+    });
+  }
+
+  logout() {
+    this.alert.question('Deseja sair do sistema?', () => {
+      this.auth.logout();
+      this.router.navigate(['/login']);
     });
   }
 }

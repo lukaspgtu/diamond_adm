@@ -50,8 +50,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.title.setTitle('Home | Diamond Trading')
-
-
   }
 
   changeKey(key) {

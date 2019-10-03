@@ -1,0 +1,9 @@
+.mobile {
+  visibility: hidden !important;
+}
+
+@media(max-width: 660px) {
+  .mobile {
+    visibility: visible !important;
+  }
+}
