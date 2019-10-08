@@ -1,0 +1,7 @@
+@media (max-width: 600px) {
+  button {
+    margin: 0 auto !important;
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+}

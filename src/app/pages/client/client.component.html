@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="client else loading">
 
   <div class="col-lg-4 col-xlg-3 col-md-5">
 
@@ -10,15 +10,15 @@
 
           <img src="../../../assets/images/users/1.jpg" class="img-circle" width="150" />
 
-          <h4 class="card-title m-t-10">Lucas Moraes Campos</h4>
+          <h4 class="card-title m-t-10" *ngIf="client">{{ client.name }}</h4>
 
-          <h6 class="card-subtitle">lukaspgtu</h6>
+          <h6 class="card-subtitle" *ngIf="client">{{ client.username }}</h6>
 
           <div class="row text-center justify-content-md-center m-t-20">
 
             <div class="col-4">
 
-              <h4 class="text-primary">$42.9</h4>
+              <h4 class="text-primary" *ngIf="client">$ {{ client.income | money }}</h4>
 
               <small>Saldo de rendimento</small>
 
@@ -26,7 +26,7 @@
 
             <div class="col-4">
 
-              <h4 class="text-primary">$73.5</h4>
+              <h4 class="text-primary" *ngIf="client">$ {{ client.bonus | money }}</h4>
 
               <small>Saldo de bônus</small>
 
@@ -39,10 +39,12 @@
             <button class="btn btn-dark btn-sm btn-rounded m-r-10"><i class="mdi mdi-open-in-new"></i> Acessar
               Conta</button>
 
-            <button class="btn btn-danger btn-sm btn-rounded m-r-10"><i class="mdi mdi-lock-outline"></i> Bloquear
+            <button class="btn btn-danger btn-sm btn-rounded m-r-10" *ngIf="!client.is_blocked"><i
+                class="mdi mdi-lock-outline"></i> Bloquear
               Conta</button>
 
-            <button class="btn btn-outline-danger btn-sm btn-rounded"><i class="mdi mdi-lock-open-outline"></i>
+            <button class="btn btn-outline-danger btn-sm btn-rounded" *ngIf="client.is_blocked"><i
+                class="mdi mdi-lock-open-outline"></i>
               Desloquear Conta</button>
 
           </div>
@@ -57,15 +59,23 @@
 
         <small class="text-muted">Gestor</small>
 
-        <h6>redemundial</h6>
+        <h6 *ngIf="manager">{{ manager.name }} <small>{{ manager.username }}</small></h6>
 
         <small class="text-muted p-t-30 db">Plano</small>
 
-        <h6>Cota Premium</h6>
+        <h6 *ngIf="plan">{{ plan.name }}</h6>
+
+        <h6 *ngIf="!plan">--</h6>
 
         <small class="text-muted p-t-30 db">Status</small> <br />
 
-        <span class="label label-success">Ativo</span>
+        <span class="label label-default" *ngIf="!client.is_blocked && client.status == 0">Inativo</span>
+
+        <span class="label label-success" *ngIf="!client.is_blocked && client.status == 1">Ativo</span>
+
+        <span class="label label-warning" *ngIf="!client.is_blocked && client.status == 2">Expirado</span>
+
+        <span class="label label-danger" *ngIf="client.is_blocked">Bloqueado</span>
 
       </div>
 
@@ -128,7 +138,8 @@
 
             <a class="nav-link" data-toggle="tab" href="#score" role="tab">
 
-              <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="ti-flag-alt"></i> Pontuação</span>
+              <span class="hidden-sm-up"></span><span class="hidden-xs-down"><i class="ti-flag-alt"></i>
+                Pontuação</span>
 
             </a>
 
@@ -389,3 +400,14 @@
   </div>
 
 </div>
+
+<ng-template #loading>
+
+  <ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#363435" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+
+    <p style="color:grey ;"> Diamond Trading </p>
+
+  </ngx-spinner>
+
+</ng-template>

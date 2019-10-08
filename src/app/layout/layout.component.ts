@@ -24,7 +24,7 @@ export class LayoutComponent implements OnInit {
 
   public innerWidth: any;
   public defaultSidebar: any;
-  public showMobileMenu = false;
+  public showMobileMenu = null;
   public expandLogo = false;
   public sidebartype = 'full';
 
@@ -73,6 +73,10 @@ export class LayoutComponent implements OnInit {
 
       default:
     }
+  }
+
+  showMenu() {
+    this.showMobileMenu = this.showMobileMenu === true ? false : true;
   }
 
 }

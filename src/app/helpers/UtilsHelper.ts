@@ -73,3 +73,16 @@ export function closest(element: HTMLElement, selector): HTMLElement {
 
   return element.closest(selector);
 }
+
+export function formatDate(date: Date): string {
+
+  const day = date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
+
+  const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+
+  const hours = date.getHours() > 9 ? date.getHours() : `0${date.getHours()}`;
+  const minutes = date.getMinutes() > 9 ? date.getMinutes() : `0${date.getMinutes()}`;
+  const seconds = date.getSeconds() > 9 ? date.getSeconds() : `0${date.getSeconds()}`;
+
+  return `${day} ${months[date.getMonth()]} ${date.getFullYear()} às ${hours}:${minutes}:${seconds}`;
+}

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../../services/alert/alert.service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { AuthService } from '../../services/user/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoadingService } from '../../services/loading/loading.service';
 import { NgxSpinnerService } from 'ngx-spinner';

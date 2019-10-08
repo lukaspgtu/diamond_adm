@@ -1,236 +1,112 @@
-<div class="row">
+<div class="row" *ngIf="plans; else loading">
 
-    <div class="col-sm-12">
+  <div class="col-sm-12">
 
-        <div class="card" *ngIf="planOpen==null">
+    <div class="card">
 
-            <div class="card-header center">
+      <div class="card-header center">
 
-                <h3>Planos</h3><br>
+        <h3>Planos</h3><br>
 
-            </div>
+      </div>
 
-            <div class="card-body">
+      <div class="card-body">
 
-                <div class="table-responsive">
+        <div class="table-responsive">
 
-                    <table class="table">
+          <table class="table">
 
-                        <thead>
+            <thead>
 
-                            <tr>
+              <tr>
 
-                                <th>Plano</th>
+                <th class="text-center" colspan="2">Plano</th>
 
-                                <th></th>
+                <th class="text-center">Preço</th>
 
-                                <th>Preço</th>
+                <th class="text-center">Pontos</th>
 
-                                <th>Pontos</th>
+                <th class="text-center">Porcentagem</th>
 
-                                <th>Porcentagem</th>
+                <th class="text-center">Teto Diário</th>
 
-                                <th>Teto Diário</th>
+                <th class="text-center">Teto Binário</th>
 
-                                <th>Teto Binário</th>
+              </tr>
 
-                            </tr>
+            </thead>
 
-                        </thead>
+            <tbody>
 
-                        <tbody>
+              <tr *ngFor="let item of plans">
 
-                            <tr>
+                <td class="text-rigth">
 
-                                <td>
+                  <img src="../../../assets/images/plan/{{ item.photo }}" width="60">
 
-                                    <img src="https://diamondtrader.co/api/img/premium.png" class="img-plan">
+                </td>
 
-                                </td>
+                <td class="text-left">
 
-                                <td>
+                  {{ item.name }}
 
-                                    <h4 class="align-h">Cota Premium</h4>
+                  <span class="label label-primary m-l-30" *ngIf="item.type == 1">Custom</span>
 
-                                </td>
+                </td>
 
-                                <td>
+                <td class="text-center">
 
-                                    <h5 class="align-h">$3,000.00</h5>
+                  $ {{ item.price | money }}
 
-                                </td>
+                </td>
 
-                                <td>
+                <td class="text-center">
 
-                                    <h5 class="align-h">1000</h5>
+                  {{ item.points }}
 
-                                </td>
+                </td>
 
-                                <td>
+                <td class="text-center">
 
-                                    <h5 class="align-h">20%</h5>
+                  {{ item.percent }}%
 
-                                </td>
+                </td>
 
-                                <td>
+                <td class="text-center">
 
-                                    <h5 class="align-h">$1000</h5>
+                  $ {{ item.payment_limit | money }}
 
-                                </td>
+                </td>
 
-                                <td>
+                <td class="text-center">
 
-                                    <h5 class="align-h">$80000</h5>
+                  $ {{ item.gain_limit | money }}
 
-                                </td>
+                </td>
 
-                            </tr>
+              </tr>
 
-                        </tbody>
+            </tbody>
 
-                    </table>
-
-                </div>
-
-            </div>
+          </table>
 
         </div>
 
-    </div>
-
-</div>
-
-<!-- MODAL PLANS  -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;" *ngIf="plan_selected">
-
-    <div class="modal-dialog modal-lg">
-
-        <div class="modal-content">
-
-            <div class="modal-header">
-
-                <h4 class="modal-title" id="myLargeModalLabel">Planos</h4>
-
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
-            </div>
-
-            <div class="modal-body">
-
-                <div class="row match-height">
-
-                    <div class="col-12 center">
-
-                        <div class="card">
-
-                            <div class="card-header center" style="background:white;">
-
-                                <img class="img-plan" src="{{plan_selected.photo}}"><br><br>
-
-                                <h2>{{plan_selected.name}}</h2>
-
-                            </div>
-
-                            <table class="table table-hover">
-
-                                <thead>
-
-                                    <tr>
-
-                                        <th></th>
-
-                                        <th></th>
-
-                                    </tr>
-
-                                </thead>
-
-                                <tbody>
-
-                                    <tr>
-
-                                        <td>
-
-                                            <p>Pontos</p>
-
-                                        </td>
-
-                                        <td>
-
-                                            <p class="info bold"> {{plan_selected.points}}</p>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>
-
-                                            <p> Binário</p>
-
-                                        </td>
-
-                                        <td>
-
-                                            <p class="info bold"> {{plan_selected.percent}}</p>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>
-
-                                            <p>Teto Diário</p>
-
-                                        </td>
-
-                                        <td>
-
-                                            <p class="info bold">{{plan_selected.payment_limit | currency}}</p>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>
-
-                                            <p>Teto Geral</p>
-
-                                        </td>
-
-                                        <td>
-
-                                            <p class="info bold">{{plan_selected.gain_limit | currency}}</p>
-
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
+  </div>
+
 </div>
 
-<!-- /.modal -->
+<ng-template #loading>
 
-<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse" [fullScreen]="true">
+  <ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#363435" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+
     <p style="color:grey ;"> Diamond Trading </p>
-</ngx-spinner>
+
+  </ngx-spinner>
+
+</ng-template>

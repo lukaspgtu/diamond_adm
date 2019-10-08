@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="withdrawsResume else loading">
 
   <div class="col-sm-12">
 
@@ -16,7 +16,7 @@
 
               <span class="display-5"><i class="mdi mdi-currency-usd"></i></span>
 
-              <span class="display-5 ml-auto">1000</span>
+              <span class="display-5 ml-auto" *ngIf="totals">{{ totals.bonus | money }}</span>
 
             </div>
 
@@ -38,7 +38,7 @@
 
               <span class="display-5"><i class="mdi mdi-currency-usd"></i></span>
 
-              <span class="display-5 ml-auto">1000</span>
+              <span class="display-5 ml-auto" *ngIf="totals">{{ totals.income | money }}</span>
 
             </div>
 
@@ -60,7 +60,7 @@
 
               <span class="display-5"><i class="mdi mdi-account-multiple"></i></span>
 
-              <span class="display-5 ml-auto">100</span>
+              <span class="display-5 ml-auto" *ngIf="totals">{{ totals.count }}</span>
 
             </div>
 
@@ -90,102 +90,32 @@
 
                   <tbody>
 
-                    <tr class="pointer">
+                    <tr class="pointer" *ngFor="let item of activations" routerLink="/invoice/{{ item.token }}">
 
                       <td>
-                        <span>20 set 2019 às 23:57:58</span>
+
+                        {{ item.created_at | date2 }}
+
                       </td>
 
-                      <td>
-                        <span>lukaspgtu</span>
+                      <td class="text-center">
+
+                        {{ item.user }}
+
                       </td>
 
-                      <td>
-                        <span>Yellow</span>
+                      <td class="text-center">
+
+                        <img src="../../../assets/images/plan/{{ item.img }}" width="30">
+
+                        <span class="m-l-10">{{ item.plan }}</span>
+
                       </td>
 
-                      <td>
-                        <span class="text-primary bold">$ 10</span>
-                      </td>
+                      <td class="text-center">
 
-                    </tr>
+                        ${{ item.value }}
 
-                    <tr class="pointer">
-
-                      <td>
-                        <span>20 set 2019 às 23:57:58</span>
-                      </td>
-
-                      <td>
-                        <span>lukaspgtu</span>
-                      </td>
-
-                      <td>
-                        <span>Green</span>
-                      </td>
-
-                      <td>
-                        <span class="text-primary bold">$ 10</span>
-                      </td>
-
-                    </tr>
-
-                    <tr class="pointer">
-
-                      <td>
-                        <span>20 set 2019 às 23:57:58</span>
-                      </td>
-
-                      <td>
-                        <span>lukaspgtu</span>
-                      </td>
-
-                      <td>
-                        <span>Green</span>
-                      </td>
-
-                      <td>
-                        <span class="text-primary bold">$ 10</span>
-                      </td>
-
-                    </tr>
-
-                    <tr class="pointer">
-
-                      <td>
-                        <span>20 set 2019 às 23:57:58</span>
-                      </td>
-
-                      <td>
-                        <span>lukaspgtu</span>
-                      </td>
-
-                      <td>
-                        <span>Green</span>
-                      </td>
-
-                      <td>
-                        <span class="text-primary bold">$ 10</span>
-                      </td>
-
-                    </tr>
-
-                    <tr class="pointer">
-
-                      <td>
-                        <span>20 set 2019 às 23:57:58</span>
-                      </td>
-
-                      <td>
-                        <span>lukaspgtu</span>
-                      </td>
-
-                      <td>
-                        <span>Green</span>
-                      </td>
-
-                      <td>
-                        <span class="text-primary bold">$ 10</span>
                       </td>
 
                     </tr>
@@ -254,15 +184,16 @@
 
                     <h5>Bônus</h5>
 
-                    <small>20 set 2019 às 23:57:58</small>
+                    <small *ngIf="lastBonusPayment">{{ lastBonusPayment.created_at | date2 }}</small>
 
                   </div>
 
                   <div class="half text-right">
 
-                    <h5 class="text-primary">$3,690</h5>
+                    <h5 class="text-primary" *ngIf="lastBonusPayment">${{ lastBonusPayment.value | money }}</h5>
 
-                    <small>20 pessoas</small>
+                    <small *ngIf="lastBonusPayment">{{ lastBonusPayment.count }} cliente<span
+                        *ngIf="lastBonusPayment.count > 1">s</span></small>
 
                   </div>
 
@@ -274,15 +205,16 @@
 
                     <h5>Rendimento</h5>
 
-                    <small>20 set 2019 às 23:57:58</small>
+                    <small *ngIf="lastIncomePayment">{{ lastIncomePayment.created_at | date2 }}</small>
 
                   </div>
 
                   <div class="half text-right">
 
-                    <h5 class="text-primary">$3,690</h5>
+                    <h5 class="text-primary" *ngIf="lastIncomePayment">${{ lastIncomePayment.value | money }}</h5>
 
-                    <small>20 pessoas</small>
+                    <small *ngIf="lastIncomePayment">{{ lastIncomePayment.count }} cliente<span
+                        *ngIf="lastIncomePayment.count > 1">s</span></small>
 
                   </div>
 
@@ -319,13 +251,14 @@
 
                     <h5>Em Aberto</h5>
 
-                    <small>234 Faturas</small>
+                    <small *ngIf="invoicesResume">{{ invoicesResume.opened.count }} Fatura<span
+                        *ngIf="invoicesResume.opened.count > 1">s</span></small>
 
                   </div>
 
                   <div class="half text-right">
 
-                    <h5 class="text-primary">$3,690</h5>
+                    <h5 class="text-primary" *ngIf="invoicesResume">${{ invoicesResume.opened.value | money }}</h5>
 
                   </div>
 
@@ -337,13 +270,14 @@
 
                     <h5>Pago</h5>
 
-                    <small>20 Faturas</small>
+                    <small *ngIf="invoicesResume">{{ invoicesResume.paid.count }} Fatura<span
+                        *ngIf="invoicesResume.paid.count > 1">s</span></small>
 
                   </div>
 
                   <div class="half text-right">
 
-                    <h5 class="text-primary">$3,690</h5>
+                    <h5 class="text-primary" *ngIf="invoicesResume">${{ invoicesResume.paid.value | money }}</h5>
 
                   </div>
 
@@ -380,13 +314,14 @@
 
                     <h5>Aguardando</h5>
 
-                    <small>20 Saques</small>
+                    <small *ngIf="withdrawsResume">{{ withdrawsResume.waiting.count }} Saque<span
+                        *ngIf="withdrawsResume.waiting.count > 1">s</span></small>
 
                   </div>
 
                   <div class="half text-right">
 
-                    <h5 class="text-primary">$3,690</h5>
+                    <h5 class="text-primary" *ngIf="withdrawsResume">${{ withdrawsResume.waiting.value | money }}</h5>
 
                   </div>
 
@@ -398,13 +333,14 @@
 
                     <h5>Confirmados</h5>
 
-                    <small>202 Saques</small>
+                    <small *ngIf="withdrawsResume">{{ withdrawsResume.confirmed.count }} Saque<span
+                        *ngIf="withdrawsResume.confirmed.count > 1">s</span></small>
 
                   </div>
 
                   <div class="half text-right">
 
-                    <h5 class="text-primary">$3,690</h5>
+                    <h5 class="text-primary" *ngIf="withdrawsResume">${{ withdrawsResume.confirmed.value | money }}</h5>
 
                   </div>
 
@@ -433,7 +369,13 @@
 
 </div>
 
-<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
-  [fullScreen]="true">
-  <p style="color:grey ;"> Diamond Trading </p>
-</ngx-spinner>
+<ng-template #loading>
+
+  <ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#363435" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+
+    <p style="color:grey ;"> Diamond Trading </p>
+
+  </ngx-spinner>
+
+</ng-template>

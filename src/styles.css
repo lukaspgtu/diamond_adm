@@ -309,17 +309,20 @@ body {
 
 .nav-tabs .nav-link {
   border: 1px solid transparent;
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 .nav-link {
   display: block;
 }
-.nav-link, .navbar {
-  padding: .5rem 1rem;
+.nav-link,
+.navbar {
+  padding: 0.5rem 1rem;
 }
 
-.customvtab .tabs-vertical li .nav-link.active, .customvtab .tabs-vertical li .nav-link:hover, .customvtab .tabs-vertical li .nav-link:focus {
+.customvtab .tabs-vertical li .nav-link.active,
+.customvtab .tabs-vertical li .nav-link:hover,
+.customvtab .tabs-vertical li .nav-link:focus {
   background: #fff;
   border: 0px;
   border-right: 2px solid #eda54b;
@@ -329,6 +332,10 @@ body {
 
 .no-border {
   border: 0px !important;
+}
+
+.ngx-pagination .current {
+  background: #363435 !important;
 }
 
 @media (max-width: 767px) {

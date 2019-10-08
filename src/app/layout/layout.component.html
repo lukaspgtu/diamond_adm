@@ -11,9 +11,9 @@
         <nav class="d-flex top-navbar navbar-expand-md navbar-light hed">
             <div class="navbar-header" [ngClass]="(expandLogo)?'expand-logo':''" data-logobg="skin6">
                 <!-- This is for the sidebar toggle which is visible on mobile only -->
-                <a (click)="showMobileMenu = !showMobileMenu"
+                <a (click)="showMenu()"
                     class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
-                    <i [ngClass]="(showMobileMenu)?'ti-close':'ti-menu'"></i>
+                    <i [ngClass]="'ti-menu'"></i>
                 </a>
                 <!-- ============================================================== -->
                 <!-- Logo -->

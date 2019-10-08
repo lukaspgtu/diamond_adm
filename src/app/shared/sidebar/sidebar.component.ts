@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { UserService } from 'src/app/services/user/user.service';
-import { AuthService } from 'src/app/services/user/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert/alert.service';
 

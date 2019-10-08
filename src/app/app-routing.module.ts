@@ -50,7 +50,7 @@ export const Approutes: Routes = [
         component: ClientsComponent
       },
       {
-        path: 'client',
+        path: 'client/:token',
         component: ClientComponent
       },
       {
@@ -74,7 +74,7 @@ export const Approutes: Routes = [
         component: InvoicesComponent
       },
       {
-        path: 'invoice',
+        path: 'invoice/:token',
         component: InvoiceComponent
       },
       {

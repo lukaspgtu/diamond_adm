@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="clients else loading">
 
   <div class="col-sm-12">
 
@@ -53,23 +53,23 @@
 
         <div class="table-responsive">
 
-          <table class="table table-hover">
+          <table class="table table-hover" #table>
 
             <thead>
 
               <tr>
 
-                <th>Data Do Cadastro</th>
+                <th class="text-center">Data Do Cadastro</th>
 
-                <th>Nome</th>
+                <th class="text-center">Nome</th>
 
-                <th>Usuário</th>
+                <th class="text-center">Usuário</th>
 
-                <th>Gestor</th>
+                <th class="text-center">Gestor</th>
 
-                <th>Plano</th>
+                <th class="text-center">Plano</th>
 
-                <th width="1">Status</th>
+                <th class="text-center" width="100">Status</th>
 
               </tr>
 
@@ -77,161 +77,56 @@
 
             <tbody>
 
-              <tr class="pointer">
+              <tr class="pointer"
+                *ngFor="let item of clients | paginate: { itemsPerPage: 10, currentPage: currentPage }; let i = index" routerLink="/client/{{ item.token }}">
 
-                <td>
+                <td class="text-center">
 
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
+                  {{ item.created_at | date2 }}
 
                 </td>
 
-                <td>
+                <td class="text-center">
 
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
+                  {{ item.name }}
 
                 </td>
 
-                <td>
+                <td class="text-center">
 
-                  Cota Premium
-
-                </td>
-
-                <td>
-
-                  <span class="block label label-success text-center">Ativo</span>
+                  {{ item.username }}
 
                 </td>
 
-              </tr>
+                <td class="text-center">
 
-              <tr class="pointer">
+                  <span *ngIf="item.manager !== null">{{ item.manager }}</span>
 
-                <td>
-
-                  11 set 2019 às 18:06:50
+                  <span *ngIf="item.manager === null">--</span>
 
                 </td>
 
-                <td>
+                <td class="text-center">
 
-                  Jonatan Martins Pacheco
+                  <span *ngIf="item.plan !== null">{{ item.plan }}</span>
 
-                </td>
+                  <span *ngIf="item.plan === null">--</span>
 
-                <td>
-
-                  Sharkjmp
 
                 </td>
 
-                <td>
+                <td class="text-center">
 
-                  lukaspgtu
+                  <span class="block label label-default text-center"
+                    *ngIf="!item.is_blocked && item.status == 0">Inativo</span>
 
-                </td>
+                  <span class="block label label-success text-center"
+                    *ngIf="!item.is_blocked && item.status == 1">Ativo</span>
 
-                <td>
+                  <span class="block label label-warning text-center"
+                    *ngIf="!item.is_blocked && item.status == 2">Expirado</span>
 
-                  Cota Premium
-
-                </td>
-
-                <td>
-
-                  <span class="block label label-default text-center">Inativo</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td>
-
-                  <span class="block label label-warning text-center">Expirado</span>
-
-                </td>
-
-              </tr>
-
-              <tr class="pointer">
-
-                <td>
-
-                  11 set 2019 às 18:06:50
-
-                </td>
-
-                <td>
-
-                  Jonatan Martins Pacheco
-
-                </td>
-
-                <td>
-
-                  Sharkjmp
-
-                </td>
-
-                <td>
-
-                  lukaspgtu
-
-                </td>
-
-                <td>
-
-                  Cota Premium
-
-                </td>
-
-                <td>
-
-                  <span class="block label label-danger text-center">Bloqueado</span>
+                  <span class="block label label-danger text-center" *ngIf="item.is_blocked">Bloqueado</span>
 
                 </td>
 
@@ -241,7 +136,8 @@
 
           </table>
 
-          <h6>Exibindo 10 de 10 clientes encontrados.</h6>
+          <pagination-controls class="text-center" (pageChange)="currentPage = $event" previousLabel="Anterior"
+            nextLabel="Próximo" (isLastPage)="true" responsive="true"></pagination-controls>
 
         </div>
 
@@ -253,9 +149,13 @@
 
 </div>
 
-<ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#EDA54B" type="ball-clip-rotate-pulse"
-  [fullScreen]="true">
+<ng-template #loading>
 
-  <p style="color:grey ;"> Diamond Trading </p>
+  <ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#363435" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
 
-</ngx-spinner>
+    <p style="color:grey ;"> Diamond Trading </p>
+
+  </ngx-spinner>
+
+</ng-template>

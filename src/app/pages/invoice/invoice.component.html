@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="invoice else loading">
 
   <div class="col-12">
 
@@ -16,13 +16,33 @@
 
                 <h3><b class="text-secondary">Contratação de Plano</b></h3>
 
-                <span class="block">Cliente: <a href="#" class="text-dark m-l-10 weight-500">Lucas Moraes
-                    Campos</a></span>
+                <span class="block" *ngIf="client">
 
-                <span class="block">Gestor: <a href="#" class="text-dark m-l-10 weight-500">Mateus Cardoso</a></span>
+                  Cliente: <button class="btn btn-link m-l-10 weight-500">{{ client.name }}<small
+                      class="p-l-10">{{ client.username }}</small></button>
 
-                <span class="block">Status: <span class="label label-success m-l-10">Confirmado</span><span
-                    class="label label-default m-l-10">Aguardando</span></span>
+                </span>
+
+                <span class="block" *ngIf="manager">
+
+                  Gestor: <button class="btn btn-link m-l-10 weight-500">{{ manager.name }}<small
+                      class="p-l-10">{{ manager.username }}</small></button>
+
+                </span>
+
+                <span class="block" *ngIf="invoice.type == 1">
+
+                  Carteira: <button class="btn btn-link m-l-10 weight-500">{{ invoice.wallet }}</button>
+
+                </span>
+
+                <span class="block m-t-5">
+
+                  Status:
+
+                  <span class="label label-success m-l-20" *ngIf="invoice.status == 1">Confirmado</span>
+
+                  <span class="label label-default m-l-10" *ngIf="invoice.status == 0">Aguardando</span></span>
 
               </address>
 
@@ -46,7 +66,7 @@
 
                     <th>Valor</th>
 
-                    <th>Confirmação</th>
+                    <th *ngIf="invoice.status == 1">Confirmação</th>
 
                     <th>Forma de Pagamento</th>
 
@@ -58,15 +78,41 @@
 
                   <tr>
 
-                    <td>25 jun 2019 às 00:33:27</td>
+                    <td>
 
-                    <td>Plano Grenn</td>
+                      <span *ngIf="invoice">{{ invoice.created_at | date2 }}</span>
 
-                    <td>$24</td>
+                    </td>
 
-                    <td>25 jun 2019 às 00:33:27</td>
+                    <td>
 
-                    <td>Bitcoin</td>
+                      <img src="../../../assets/images/plan/{{ plan.img }}" width="30" *ngIf="plan">
+
+                      <span class="m-l-10" *ngIf="plan">{{ plan.name }}</span>
+
+                    </td>
+
+                    <td>
+
+                      <span *ngIf="invoice">${{ invoice.value | money }}</span>
+
+                    </td>
+
+                    <td *ngIf="invoice && invoice.status == 1">
+
+                      <span *ngIf="invoice">{{ invoice.confirmed_at | date2 }}</span>
+
+                    </td>
+
+                    <td>
+
+                      <span *ngIf="invoice && invoice.confirmation_type == 1">Bitcoin</span>
+
+                      <span *ngIf="invoice && invoice.confirmation_type == 2">Sopague</span>
+
+                      <span *ngIf="invoice && invoice.confirmation_type == 3">Depósito</span>
+
+                    </td>
 
                   </tr>
 
@@ -82,19 +128,15 @@
 
             <div class="text-center m-t-40">
 
+              <hr>
+
               <button onClick="javascript:window.history.back();" class="btn btn-outline-dark m-l-10">
 
                 <span><i class="fa fa-arrow-left"></i> Voltar</span>
 
               </button>
 
-              <button onClick="javascript:window.print();" class="btn btn-outline-dark m-l-10">
-
-                <span><i class="fa fa-print"></i> Imprimir</span>
-
-              </button>
-
-              <button class="btn btn-success m-l-10"><i class="fa fa-check"></i> Confirmar</button>
+              <button class="btn btn-success m-l-10"><i class="fa fa-check"></i> Confirmar Pagamento</button>
 
             </div>
 
@@ -109,3 +151,14 @@
   </div>
 
 </div>
+
+<ng-template #loading>
+
+  <ngx-spinner bdOpacity=0.9 bdColor="white" size="medium" color="#363435" type="ball-clip-rotate-pulse"
+    [fullScreen]="true">
+
+    <p style="color:grey ;"> Diamond Trading </p>
+
+  </ngx-spinner>
+
+</ng-template>

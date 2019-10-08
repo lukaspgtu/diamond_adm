@@ -27,12 +27,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { NgxMaskModule } from 'ngx-mask'
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { UserService } from './services/user/user.service';
-import { AuthService } from './services/user/auth.service';
+import { AuthService } from './services/auth/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PlansComponent } from './pages/plans/plans.component';
 import { NetworkComponent } from './pages/network/network.component';
-import { NetworkService } from './services/user/network.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
@@ -58,6 +57,8 @@ import { PasswordComponent } from './pages/password/password.component';
 import { MasterComponent } from './pages/master/master.component';
 import { SystemComponent } from './pages/system/system.component';
 import { SupportComponent } from './pages/support/support.component';
+import { MoneyPipe } from './pipes/money/money.pipe';
+import { Date2Pipe } from './pipes/date2/date2.pipe';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -90,7 +91,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PasswordComponent,
     MasterComponent,
     SystemComponent,
-    SupportComponent
+    SupportComponent,
+    MoneyPipe,
+    Date2Pipe
   ],
   imports: [
     CommonModule,
@@ -123,7 +126,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgbModule.forRoot(),
     RouterModule.forRoot(Approutes, { useHash: false })
   ],
-  providers: [UserService, AuthService, NetworkService,
+  providers: [UserService, AuthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
